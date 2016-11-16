@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		464BE3861DDB2F11008226A1 /* thirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BE3851DDB2F11008226A1 /* thirdViewController.swift */; };
+		464BE3881DDB5506008226A1 /* json.txt in Resources */ = {isa = PBXBuildFile; fileRef = 464BE3871DDB5506008226A1 /* json.txt */; };
 		469839D31DCCC0710042A9F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469839D21DCCC0710042A9F5 /* AppDelegate.swift */; };
 		469839D51DCCC0710042A9F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469839D41DCCC0710042A9F5 /* ViewController.swift */; };
 		469839D81DCCC0710042A9F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469839D61DCCC0710042A9F5 /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		469839DD1DCCC0710042A9F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469839DB1DCCC0710042A9F5 /* LaunchScreen.storyboard */; };
 		469839E81DCCC0710042A9F5 /* kadai1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469839E71DCCC0710042A9F5 /* kadai1Tests.swift */; };
 		469839F31DCCC0710042A9F5 /* kadai1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469839F21DCCC0710042A9F5 /* kadai1UITests.swift */; };
+		469895BE1DDAAF4F0061B130 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469895BD1DDAAF4F0061B130 /* secondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		464BE3851DDB2F11008226A1 /* thirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = thirdViewController.swift; path = ../../thirdViewController.swift; sourceTree = "<group>"; };
+		464BE3871DDB5506008226A1 /* json.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json.txt; sourceTree = "<group>"; };
 		469839CF1DCCC0710042A9F5 /* kadai1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kadai1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		469839D21DCCC0710042A9F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		469839D41DCCC0710042A9F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		469839EE1DCCC0710042A9F5 /* kadai1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kadai1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		469839F21DCCC0710042A9F5 /* kadai1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kadai1UITests.swift; sourceTree = "<group>"; };
 		469839F41DCCC0710042A9F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		469895BD1DDAAF4F0061B130 /* secondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,13 @@
 			children = (
 				469839D21DCCC0710042A9F5 /* AppDelegate.swift */,
 				469839D41DCCC0710042A9F5 /* ViewController.swift */,
+				469895BD1DDAAF4F0061B130 /* secondViewController.swift */,
+				464BE3851DDB2F11008226A1 /* thirdViewController.swift */,
 				469839D61DCCC0710042A9F5 /* Main.storyboard */,
 				469839D91DCCC0710042A9F5 /* Assets.xcassets */,
 				469839DB1DCCC0710042A9F5 /* LaunchScreen.storyboard */,
 				469839DE1DCCC0710042A9F5 /* Info.plist */,
+				464BE3871DDB5506008226A1 /* json.txt */,
 			);
 			path = kadai1;
 			sourceTree = "<group>";
@@ -232,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464BE3881DDB5506008226A1 /* json.txt in Resources */,
 				469839DD1DCCC0710042A9F5 /* LaunchScreen.storyboard in Resources */,
 				469839DA1DCCC0710042A9F5 /* Assets.xcassets in Resources */,
 				469839D81DCCC0710042A9F5 /* Main.storyboard in Resources */,
@@ -260,6 +270,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				469839D51DCCC0710042A9F5 /* ViewController.swift in Sources */,
+				469895BE1DDAAF4F0061B130 /* secondViewController.swift in Sources */,
+				464BE3861DDB2F11008226A1 /* thirdViewController.swift in Sources */,
 				469839D31DCCC0710042A9F5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +517,7 @@
 				469839F91DCCC0710042A9F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		469839FA1DCCC0710042A9F5 /* Build configuration list for PBXNativeTarget "kadai1Tests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +526,7 @@
 				469839FC1DCCC0710042A9F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		469839FD1DCCC0710042A9F5 /* Build configuration list for PBXNativeTarget "kadai1UITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +535,7 @@
 				469839FF1DCCC0710042A9F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
