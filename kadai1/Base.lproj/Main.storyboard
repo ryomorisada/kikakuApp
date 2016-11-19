@@ -115,7 +115,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUQ-o5-b1r">
-                                <frame key="frameInset" minX="61" minY="352" width="46" height="53"/>
+                                <frame key="frameInset" minX="61" minY="352" width="69" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Yes"/>
@@ -123,7 +123,7 @@
                                     <action selector="yesBtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="RjR-iF-Pjf"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Rb-97-mdc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Rb-97-mdc">
                                 <frame key="frameInset" minY="114" width="320" height="193"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -139,7 +139,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhB-Ep-6UU">
-                                <frame key="frameInset" minX="224" minY="352" width="37" height="53"/>
+                                <frame key="frameInset" minX="224" minY="352" width="49" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="No"/>
@@ -151,13 +151,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="option1Btn" destination="ZUQ-o5-b1r" id="J4x-TW-fU3"/>
+                        <outlet property="option2Btn" destination="dhB-Ep-6UU" id="rQ0-rr-7sX"/>
                         <outlet property="questionLable" destination="ecj-IJ-noY" id="5W7-OH-fns"/>
                         <outlet property="textView" destination="9Rb-97-mdc" id="QLY-So-UOP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsa-76-9nE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="900"/>
+            <point key="canvasLocation" x="1732.5" y="900"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7tE-tj-8h1">
