@@ -9,7 +9,7 @@
 import UIKit
 
 class secondViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    let myGanre = ["服,靴","本","電子機器","ぬいぐるみ","文房具","その他"]
+    let myGanre = ["服,靴","本","電子機器","ぬいぐるみ","文房具","化粧品","思い出の品"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
