@@ -31,6 +31,9 @@ class secondViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     
     //選択されたときに行う処理
+    
+    
+    //選択したジャンルを質問画面に渡したい
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Num: \(indexPath.row)")
         print("Value: \(myGanre[indexPath.row])")
