@@ -9,9 +9,13 @@
 import UIKit
 
 class secondViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    let myGanre = ["服,靴","本","電子機器","ぬいぐるみ","文房具","化粧品","思い出の品"]
+    var myGanre: NSArray = []
 
     override func viewDidLoad() {
+        //メンバ変数を用意（グローバル変数を代入）tabedApplication参照
+        
+        
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -34,10 +38,6 @@ class secondViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     
     //選択したジャンルを質問画面に渡したい
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Num: \(indexPath.row)")
-        print("Value: \(myGanre[indexPath.row])")
-    }
     
     
     

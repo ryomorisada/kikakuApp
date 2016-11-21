@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		460791931DE0099900350F7F /* fourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460791921DE0099900350F7F /* fourthViewController.swift */; };
+		464BC3B71DE1BCF6005AE905 /* fifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */; };
+		464BC3B91DE1BDD9005AE905 /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 464BC3B81DE1BDD9005AE905 /* 01.jpg */; };
 		464BE3861DDB2F11008226A1 /* thirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BE3851DDB2F11008226A1 /* thirdViewController.swift */; };
 		469839D31DCCC0710042A9F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469839D21DCCC0710042A9F5 /* AppDelegate.swift */; };
 		469839D51DCCC0710042A9F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469839D41DCCC0710042A9F5 /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		460791921DE0099900350F7F /* fourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fourthViewController.swift; sourceTree = "<group>"; };
+		464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fifthViewController.swift; sourceTree = "<group>"; };
+		464BC3B81DE1BDD9005AE905 /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
 		464BE3851DDB2F11008226A1 /* thirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = thirdViewController.swift; path = ../../thirdViewController.swift; sourceTree = "<group>"; };
 		469839CF1DCCC0710042A9F5 /* kadai1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kadai1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		469839D21DCCC0710042A9F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +114,9 @@
 				469895BD1DDAAF4F0061B130 /* secondViewController.swift */,
 				464BE3851DDB2F11008226A1 /* thirdViewController.swift */,
 				460791921DE0099900350F7F /* fourthViewController.swift */,
+				464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */,
 				469839D61DCCC0710042A9F5 /* Main.storyboard */,
+				464BC3B81DE1BDD9005AE905 /* 01.jpg */,
 				469839D91DCCC0710042A9F5 /* Assets.xcassets */,
 				469839DB1DCCC0710042A9F5 /* LaunchScreen.storyboard */,
 				469839DE1DCCC0710042A9F5 /* Info.plist */,
@@ -244,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464BC3B91DE1BDD9005AE905 /* 01.jpg in Resources */,
 				46FBF5681DDDFBB100BBCD9A /* json.txt in Resources */,
 				469839DD1DCCC0710042A9F5 /* LaunchScreen.storyboard in Resources */,
 				469839DA1DCCC0710042A9F5 /* Assets.xcassets in Resources */,
@@ -274,6 +281,7 @@
 			files = (
 				460791931DE0099900350F7F /* fourthViewController.swift in Sources */,
 				469839D51DCCC0710042A9F5 /* ViewController.swift in Sources */,
+				464BC3B71DE1BCF6005AE905 /* fifthViewController.swift in Sources */,
 				469895BE1DDAAF4F0061B130 /* secondViewController.swift in Sources */,
 				464BE3861DDB2F11008226A1 /* thirdViewController.swift in Sources */,
 				469839D31DCCC0710042A9F5 /* AppDelegate.swift in Sources */,
