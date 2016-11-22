@@ -82,11 +82,11 @@
                                         <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="egY-j9-qRB" id="93l-VD-c89">
-                                            <frame key="frameInset" width="320" height="43"/>
+                                            <frame key="frameInset" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ng4-rl-j2K" kind="show" id="2LS-KM-3C4"/>
+                                            <segue destination="ng4-rl-j2K" kind="show" identifier="segue" id="2LS-KM-3C4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -307,6 +307,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="d8F-ZJ-XhD"/>
+        <segue reference="4Z3-fI-M4X"/>
     </inferredMetricsTieBreakers>
 </document>

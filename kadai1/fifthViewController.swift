@@ -28,17 +28,19 @@ class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectio
     
     //セルの中身を設定
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         //cellオブジェクトを作成
-        let cell:customViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! customViewCell
-        //タイトルの設定
-        cell.title.text = "タイトル"
-        //画像の設定
-        cell.image.image = UIImage(named: "01.jpg")//berry.pngの所は追加したファイル名に直す
+        let cell:UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UICollectionViewCell
+//        //タイトルの設定
+//        cell.title.text = "タイトル"
+//        //画像の設定
+//        cell.image.image = UIImage(named: "01.jpg")//berry.pngの所は追加したファイル名に直す
+//        //背景色の設定
+//        cell.backgroundColor = UIColor.black
         //設定したcellを返す
-        return cell
 
-        
+        return cell
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -10,11 +10,12 @@ import UIKit
 
 class secondViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var myGanre: NSArray = []
-
+    
     override func viewDidLoad() {
-        //メンバ変数を用意（グローバル変数を代入）tabedApplication参照
-        
-        
+        //Appにアクセス
+        var myAp = UIApplication.shared.delegate as! AppDelegate
+        //メンバ変数にグローバル変数から代入
+        myGanre = myAp.myGanre as NSArray
         
         super.viewDidLoad()
 
@@ -33,11 +34,18 @@ class secondViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     
+    //選択されたときに行う処理(tableviewApp参照)answerに選択されたものを代入
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath.row)行目が選択されました")
+        let selectedIndex = indexPath.row
+
+        //ここに、次画面へ渡すデータの代入処理を記述(自分がつけた名前に変更していく穴埋め)
+        let secondVC = segue.destination as! secondViewController
+        secondVC.scSelectedIndex = selectedIndex
     
-    //選択されたときに行う処理
+        performSegue(withIdentifier: "secondSegue", sender: nil)
+    }
     
-    
-    //選択したジャンルを質問画面に渡したい
     
     
     
