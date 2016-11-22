@@ -1,44 +1,58 @@
 [
 {
-"questionCloth" : ["質問1", "質問内容","その服(靴)は以下の項目に一つでも当てはまりますか?\n・1年以上使用していない\n・傷んでいる\n・体型にあっていない"]
+"Genre":"questionCloth",
+"question" : ["質問1", "その服(靴)は以下の項目に一つでも当てはまりますか?\n・1年以上使用していない\n・傷んでいる\n・体型にあっていない"]
 },
 {
-"questionCloth" : ["質問2", "その服はいつか必ず使用しますか？"]
+"Genre":"questionCloth",
+"question" : ["質問2", "その服はいつか必ず使用しますか？"]
 },
 {
+"Genre":"questionCloth",
 "questionCloth" : ["質問2", "その服はお気に入りで繰り返し使用したいですか?"]
 },
 {
-"questionBook" : ["質問1", "その本は以下の項目に一つでも当てはまりますか?\n・一度も読んでしばらく読んでいない\n・読んでいないがもう読む気がない"]
+"Genre":"questionBook",
+"question" : ["質問1", "その本は以下の項目に一つでも当てはまりますか?\n・一度も読んでしばらく読んでいない\n・読んでいないがもう読む気がない"]
 },
 {
-"questionBook" : ["質問2", "今手元にこの本がなかったとして、同じ値段を払って買うと思いますか?"]
+"Genre":"questionBook",
+"question" : ["質問2", "今手元にこの本がなかったとして、同じ値段を払って買うと思いますか?"]
 },
 {
+"Genre":"questionCloth",
 "questionDevice" : ["質問1", "そのデバイスは以下の項目に一つでも当てはまりますか?\n・故障しており修理して使う予定がない\n・故障はしていないが1年以上使用していない"]
 },
 {
+"Genre":"questionCloth",
 "questionDore" : ["質問1", "部屋にぬいぐるみが3つ以上ありますか?"]
 },
 {
+"Genre":"questionCloth",
 "questionDore" : ["質問2", "そのぬいぐるみは1番目及び2番目に気に入っていますか?"]
 },
 {
+"Genre":"questionCloth",
 "questionStationary" : ["質問1", "同じ文房具が複数個ありますか?"]
 },
 {
+"Genre":"questionCloth",
 "questionStationary" : ["質問2", "その文房具は消耗品でいずれ使うものですか?"]
 },
 {
+"Genre":"questionCloth",
 "questionStationary" : ["質問2", "その文房具はいずれ必ず使いますか?"]
 },
 {
+"Genre":"questionCloth",
 "questionCosme" : ["質問1", "その化粧品は以下の項目に一つでも当てはまりますか?\n・肌に合っていない\n・開封後半年を過ぎている\n・いつ買ったか思い出せない"]
 },
 {
+"Genre":"questionCloth",
 "questionCosme" : ["質問2", "その化粧品は以下の項目に一つでも当てはまりますか?\n・その化粧品を気に入っていない\n・似た化粧品を複数持っている"]
 },
 {
+"Genre":"questionCloth",
 "questionMemory" : ["質問1", "その品は写真に撮ることで手放せますか?"]
 },
 ]

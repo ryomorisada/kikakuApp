@@ -86,7 +86,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ng4-rl-j2K" kind="show" identifier="segue" id="2LS-KM-3C4"/>
+                                            <segue destination="ng4-rl-j2K" kind="show" identifier="secondSegue" id="2LS-KM-3C4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -98,6 +98,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="myTableView" destination="EBJ-dN-90O" id="8f5-Ba-OZr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFf-Tu-KdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

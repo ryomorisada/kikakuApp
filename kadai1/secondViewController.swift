@@ -12,6 +12,7 @@ class secondViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var myGanre: NSArray = []
     var selectedIndex = -1
 
+    @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         //Appにアクセス
@@ -39,13 +40,17 @@ class secondViewController: UIViewController,UITableViewDataSource,UITableViewDe
     //選択されたときに行う処理(tableviewApp参照)answerに選択されたものを代入
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("\(indexPath.row)行目が選択されました")
-         selectedIndex = indexPath.row
-        
-    
-        performSegue(withIdentifier: "secondSegue", sender: nil)
+//         selectedIndex = indexPath.row
+//        
+//    
+//        performSegue(withIdentifier: "secondSegue", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        var indexPath = myTableView.indexPathForSelectedRow
+        
+        selectedIndex = (indexPath?.row)!
         //ここに、次画面へ渡すデータの代入処理を記述(自分がつけた名前に変更していく穴埋め)
         let secondVC = segue.destination as! thirdViewController
         secondVC.selectedIndex = selectedIndex
