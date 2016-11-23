@@ -51,7 +51,8 @@ class secondViewController: UIViewController,UITableViewDataSource,UITableViewDe
         var indexPath = myTableView.indexPathForSelectedRow
         
         selectedIndex = (indexPath?.row)!
-        //ここに、次画面へ渡すデータの代入処理を記述(自分がつけた名前に変更していく穴埋め)
+        
+        //次画面へ渡すデータの代入処理を記述
         let secondVC = segue.destination as! thirdViewController
         secondVC.selectedIndex = selectedIndex
     }
