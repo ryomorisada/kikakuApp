@@ -187,7 +187,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Yes"/>
                                 <connections>
-                                    <action selector="btn1Tap:" destination="ng4-rl-j2K" eventType="touchUpInside" id="8dh-Ev-fs3"/>
                                     <action selector="yesBtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="RjR-iF-Pjf"/>
                                     <segue destination="ggq-QY-Wje" kind="show" identifier="yesSegue" id="4Z3-fI-M4X"/>
                                 </connections>
@@ -213,7 +212,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="No"/>
                                 <connections>
-                                    <action selector="btn2Tap:" destination="ng4-rl-j2K" eventType="touchUpInside" id="3dG-q8-9an"/>
                                     <action selector="noBtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="bVd-Bg-i6K"/>
                                     <segue destination="ggq-QY-Wje" kind="show" identifier="noSegue" id="d8F-ZJ-XhD"/>
                                 </connections>
