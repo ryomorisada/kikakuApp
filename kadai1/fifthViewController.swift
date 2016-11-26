@@ -36,8 +36,8 @@ class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectio
 //        cell.image.image = UIImage(named: "01.jpg")//berry.pngの所は追加したファイル名に直す
 //        //背景色の設定
 //        cell.backgroundColor = UIColor.black
-        //設定したcellを返す
-
+//        設定したcellを返す
+//
         return cell
     }
     

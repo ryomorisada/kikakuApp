@@ -21,10 +21,19 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yga-sQ-sRR">
                                 <frame key="frameInset" minX="107" minY="282" width="107" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.16832205164973257" green="0.71297907800435989" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="診断する"/>
+                                <state key="normal" title="Check!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.30224555346127657" green="0.29524148351786772" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="BtnCheck:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YHW-eM-dHS"/>
                                     <segue destination="f2A-S2-BKh" kind="show" id="BHc-PT-Xmz"/>
                                 </connections>
                             </button>
@@ -38,28 +47,54 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gst-iu-4Um">
                                 <frame key="frameInset" minX="24" minY="490" width="123" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="思い出を記録する"/>
+                                <color key="backgroundColor" red="1" green="0.19197785473177165" blue="0.93782568796649346" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="camera">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="BtnPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mip-kb-nbx"/>
+                                    <segue destination="Fgw-0f-J44" kind="show" id="kUh-yc-T3I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcx-Sn-8zx">
                                 <frame key="frameInset" minX="181" minY="489" width="123" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="思い出を見る"/>
+                                <color key="backgroundColor" red="1" green="0.95834476783707667" blue="0.15735878968094452" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="album">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="BtnAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uhr-pl-QgL"/>
                                     <segue destination="rhD-d9-edX" kind="show" id="efn-2G-zrg"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sna-Yp-lPd">
+                                <frame key="frameInset" minY="20" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="捨てる" id="yfh-Y8-gRw"/>
+                    <connections>
+                        <outlet property="myImageView" destination="sna-Yp-lPd" id="JXy-6K-Uaz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1055.625" y="123.59154929577466"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="Qck-Dw-rI4">
@@ -79,10 +114,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" id="egY-j9-qRB">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="egY-j9-qRB" id="93l-VD-c89">
-                                            <frame key="frameInset" width="320" height="43.5"/>
+                                            <frame key="frameInset" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -181,24 +216,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUQ-o5-b1r" customClass="yesBtn">
-                                <frame key="frameInset" minX="61" minY="352" width="69" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Yes"/>
-                                <connections>
-                                    <action selector="yesBtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="RjR-iF-Pjf"/>
-                                    <segue destination="ggq-QY-Wje" kind="show" identifier="yesSegue" id="4Z3-fI-M4X"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Rb-97-mdc">
-                                <frame key="frameInset" minY="114" width="320" height="193"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="質問１" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ecj-IJ-noY">
                                 <frame key="frameInset" minX="106" minY="64" width="108" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -206,22 +223,34 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhB-Ep-6UU" customClass="noBtn">
-                                <frame key="frameInset" minX="224" minY="352" width="49" height="69"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa3-Km-v0x">
+                                <frame key="frameInset" minX="71" minY="388" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="No"/>
+                                <state key="normal" title="Yes"/>
                                 <connections>
-                                    <action selector="noBtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="bVd-Bg-i6K"/>
-                                    <segue destination="ggq-QY-Wje" kind="show" identifier="noSegue" id="d8F-ZJ-XhD"/>
+                                    <action selector="yesBtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="ZOK-qg-cya"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENN-4h-CW9">
+                                <frame key="frameInset" minX="218" minY="388" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="No"/>
+                                <connections>
+                                    <action selector="nobtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="QRR-aA-EmW"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Rb-97-mdc">
+                                <frame key="frameInset" minY="97" width="320" height="193"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="option1Btn" destination="ZUQ-o5-b1r" id="J4x-TW-fU3"/>
-                        <outlet property="option2Btn" destination="dhB-Ep-6UU" id="rQ0-rr-7sX"/>
                         <outlet property="questionLable" destination="ecj-IJ-noY" id="5W7-OH-fns"/>
                         <outlet property="textView" destination="9Rb-97-mdc" id="QLY-So-UOP"/>
                     </connections>
@@ -250,23 +279,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIe-Ch-mAS">
-                                <frame key="frameInset" minX="93" minY="355" width="135" height="44"/>
+                                <frame key="frameInset" minX="89" minY="420" width="135" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.23222816401973712" green="0.093149230389644067" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="メニューに戻る"/>
+                                <state key="normal" title="return to menu"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="backMenuBtn:" destination="ggq-QY-Wje" eventType="touchUpInside" id="hKE-4N-6EJ"/>
                                     <action selector="yesBtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="gPP-b0-nMj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUR-8I-kSi">
-                                <frame key="frameInset" minX="93" minY="415" width="150" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="思い出を記録する"/>
-                                <connections>
-                                    <action selector="cameraBtn:" destination="ggq-QY-Wje" eventType="touchUpInside" id="yKa-pE-8ox"/>
-                                    <action selector="yesBtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="VgM-1y-qUU"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="4S9-jF-sfh"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="捨てる" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ua5-WX-sLx">
@@ -276,6 +303,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUR-8I-kSi">
+                                <frame key="frameInset" minX="89" minY="338" width="135" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.19804269936565755" blue="0.94163141681357954" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="camera"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraBtn:" destination="ggq-QY-Wje" eventType="touchUpInside" id="yKa-pE-8ox"/>
+                                    <action selector="yesBtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="VgM-1y-qUU"/>
+                                    <segue destination="Fgw-0f-J44" kind="show" id="Q3m-sV-xSR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -306,8 +351,76 @@
             </objects>
             <point key="canvasLocation" x="309" y="124"/>
         </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="EfB-pP-PUq">
+            <objects>
+                <viewController id="Fgw-0f-J44" customClass="cameraViewController" customModule="kadai1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="obc-dR-s5M"/>
+                        <viewControllerLayoutGuide type="bottom" id="cmP-yS-I5U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bG2-lt-Vk0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ni-sG-or7">
+                                <frame key="frameInset" minX="33" minY="64" width="255" height="374"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWc-Fz-zGJ">
+                                <frame key="frameInset" minX="36" minY="508" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.18073291762245247" blue="0.93974237154554352" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="camera"/>
+                                <connections>
+                                    <action selector="cameraStart:" destination="Fgw-0f-J44" eventType="touchUpInside" id="JaN-0m-AhG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z12-21-l4H">
+                                <frame key="frameInset" minX="144" minY="508" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.13162224158368885" blue="0.25949905315229815" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="savePic:" destination="Fgw-0f-J44" eventType="touchUpInside" id="eSx-mV-XeE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUE-4G-9MB">
+                                <frame key="frameInset" minX="234" minY="508" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.95870144419656089" blue="0.15860196278655658" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="album"/>
+                                <connections>
+                                    <action selector="album:" destination="Fgw-0f-J44" eventType="touchUpInside" id="Fa8-EV-Fck"/>
+                                    <segue destination="rhD-d9-edX" kind="show" id="PFm-kr-bOH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGQ-ul-qvZ">
+                                <frame key="frameInset" minX="59" minY="454" width="202" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="album" destination="ZUE-4G-9MB" id="Bm7-HM-M5J"/>
+                        <outlet property="cameraStart" destination="GWc-Fz-zGJ" id="oeo-vS-zI4"/>
+                        <outlet property="cameraView" destination="2ni-sG-or7" id="bk2-ru-7jZ"/>
+                        <outlet property="label" destination="dGQ-ul-qvZ" id="bes-B1-10o"/>
+                        <outlet property="savePic" destination="Z12-21-l4H" id="S3n-Yz-z7x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUe-1K-mnm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168.75" y="900"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4Z3-fI-M4X"/>
+        <segue reference="4S9-jF-sfh"/>
+        <segue reference="efn-2G-zrg"/>
+        <segue reference="kUh-yc-T3I"/>
     </inferredMetricsTieBreakers>
 </document>
