@@ -10,6 +10,7 @@ import UIKit
 
 class fourthViewController: UIViewController {
 
+    @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var checkResultLabel: UITextField!
         @IBOutlet weak var resultLabel: UITextField!
     //answerDistinationのメンバ変数定義
@@ -20,6 +21,8 @@ class fourthViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        myImageView.image = UIImage(named:"02.jpg")
+        
         if answerDistination1 == -1 {
         resultLabel.text = "捨てる"
         }

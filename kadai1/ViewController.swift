@@ -17,19 +17,15 @@ class ViewController: UIViewController {
     var myDevice : AVCaptureDevice!
     // 画像のアウトプット.
     var myImageOutput: AVCaptureStillImageOutput!
-    
-    
     @IBOutlet weak var myImageView: UIImageView!
-//    let myImage = UIImage(named: "")
-//    let myImageView = UIImageView()
-//    myImageView.image = myImage!
-//    myImageView.frame = CGRectMake(0, 0, myImage!.size.width, myImage!.size.height)
-//    self.view.addSubview(myImageView)
     
 
     
     
     override func viewDidLoad() {
+        //背景画面の指定
+        myImageView.image = UIImage(named:"room01.jpg")
+        
         // セッションの作成.
         mySession = AVCaptureSession()
         
@@ -41,6 +37,7 @@ class ViewController: UIViewController {
             if((device as AnyObject).position == AVCaptureDevicePosition.back){
                 myDevice = device as! AVCaptureDevice
             }
+            
         }
        
         
