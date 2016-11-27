@@ -16,6 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let myGanre = ["服,靴","本","電子機器","ぬいぐるみ","文房具","化粧品","思い出の品"]
     //空っぽの変数
     let answer = ""
+    
+    //UserDefaultsに関する処理
+    var myUserDafault:UserDefaults = UserDefaults()
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Override point for customization after application launch.
+        
+        //登録されているUserDefaultに+1する
+        let count:Int = myUserDafault.integer(forKey: "VisitCount") + 1
+        
+        //+1した値を登録する
+        myUserDafault.set(count, forKey: "VisitCount")
+        
+        return true
+    }
+}
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -44,7 +60,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
-}
 

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4606BA211DEACBC60094B45B /* comentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606BA201DEACBC60094B45B /* comentViewController.swift */; };
 		460791931DE0099900350F7F /* fourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460791921DE0099900350F7F /* fourthViewController.swift */; };
-		46393E651DE895CB00BF4071 /* cameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46393E641DE895CB00BF4071 /* cameraViewController.swift */; };
 		464BC3B71DE1BCF6005AE905 /* fifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */; };
 		464BE3861DDB2F11008226A1 /* thirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BE3851DDB2F11008226A1 /* thirdViewController.swift */; };
 		469839D31DCCC0710042A9F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469839D21DCCC0710042A9F5 /* AppDelegate.swift */; };
@@ -42,8 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4606BA201DEACBC60094B45B /* comentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = comentViewController.swift; sourceTree = "<group>"; };
 		460791921DE0099900350F7F /* fourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fourthViewController.swift; sourceTree = "<group>"; };
-		46393E641DE895CB00BF4071 /* cameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameraViewController.swift; sourceTree = "<group>"; };
 		464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fifthViewController.swift; sourceTree = "<group>"; };
 		464BE3851DDB2F11008226A1 /* thirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = thirdViewController.swift; path = ../../thirdViewController.swift; sourceTree = "<group>"; };
 		469839CF1DCCC0710042A9F5 /* kadai1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kadai1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,12 +114,12 @@
 			isa = PBXGroup;
 			children = (
 				469839D21DCCC0710042A9F5 /* AppDelegate.swift */,
-				46393E641DE895CB00BF4071 /* cameraViewController.swift */,
 				469839D41DCCC0710042A9F5 /* ViewController.swift */,
 				469895BD1DDAAF4F0061B130 /* secondViewController.swift */,
 				464BE3851DDB2F11008226A1 /* thirdViewController.swift */,
 				460791921DE0099900350F7F /* fourthViewController.swift */,
 				464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */,
+				4606BA201DEACBC60094B45B /* comentViewController.swift */,
 				469839D61DCCC0710042A9F5 /* Main.storyboard */,
 				46BD32971DEAB289005EBC3A /* room01.jpg */,
 				46BD32991DEABB25005EBC3A /* 02.jpg */,
@@ -288,8 +288,8 @@
 			files = (
 				460791931DE0099900350F7F /* fourthViewController.swift in Sources */,
 				469839D51DCCC0710042A9F5 /* ViewController.swift in Sources */,
+				4606BA211DEACBC60094B45B /* comentViewController.swift in Sources */,
 				464BC3B71DE1BCF6005AE905 /* fifthViewController.swift in Sources */,
-				46393E651DE895CB00BF4071 /* cameraViewController.swift in Sources */,
 				469895BE1DDAAF4F0061B130 /* secondViewController.swift in Sources */,
 				464BE3861DDB2F11008226A1 /* thirdViewController.swift in Sources */,
 				469839D31DCCC0710042A9F5 /* AppDelegate.swift in Sources */,

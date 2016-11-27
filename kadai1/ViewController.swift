@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // セッション.
     var mySession : AVCaptureSession!
@@ -37,9 +37,15 @@ class ViewController: UIViewController {
             if((device as AnyObject).position == AVCaptureDevicePosition.back){
                 myDevice = device as! AVCaptureDevice
             }
-            
+        
         }
        
+        //以下カメラメソッド
+        
+        
+        
+        
+        
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -50,6 +56,12 @@ class ViewController: UIViewController {
     }
     @IBAction func BtnPhoto(_ sender: AnyObject) {
     }
+    
+
+
+
+
+    
     @IBAction func BtnAlbum(_ sender: AnyObject) {
     }
     
@@ -58,5 +70,5 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    }
 
+}
