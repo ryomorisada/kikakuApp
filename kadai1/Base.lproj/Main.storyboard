@@ -199,7 +199,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFZ-mX-QNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="l45-yf-nuG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="533" y="1784"/>
+            <point key="canvasLocation" x="1056" y="1698"/>
         </scene>
         <!--Coment View Controller-->
         <scene sceneID="xo5-Ft-5Vl">
@@ -228,9 +228,14 @@
                                 <frame key="frameInset" minX="128" minY="423" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="保存する"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sf-gu-oYP">
+                                <frame key="frameInset" minX="129" minY="476" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="アルバム"/>
                                 <connections>
-                                    <action selector="saveBtn:" destination="y4T-ai-oHi" eventType="touchUpInside" id="r9E-Ne-hvi"/>
-                                    <segue destination="rhD-d9-edX" kind="show" id="2n3-At-Cdo"/>
+                                    <action selector="displayBtn:" destination="y4T-ai-oHi" eventType="touchUpInside" id="D9D-RW-lKW"/>
+                                    <segue destination="rhD-d9-edX" kind="show" id="hqm-fQ-eal"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -243,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agm-ai-6yb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636.875" y="1624.6478873239437"/>
+            <point key="canvasLocation" x="1056" y="900"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="Fnp-X5-YcA">
@@ -298,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsa-76-9nE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732.5" y="900"/>
+            <point key="canvasLocation" x="1772" y="900"/>
         </scene>
         <!--Fourth View Controller-->
         <scene sceneID="Wj8-j4-68C">
@@ -376,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBd-FC-3a9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2643.75" y="900"/>
+            <point key="canvasLocation" x="2582" y="900"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7tE-tj-8h1">

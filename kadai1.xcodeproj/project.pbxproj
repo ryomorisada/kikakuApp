@@ -217,6 +217,7 @@
 				TargetAttributes = {
 					469839CE1DCCC0710042A9F5 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = QDCA4J2J6V;
 						ProvisioningStyle = Automatic;
 					};
 					469839E21DCCC0710042A9F5 = {
@@ -444,7 +445,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QDCA4J2J6V;
 				INFOPLIST_FILE = kadai1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "---.kadai1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -456,7 +459,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QDCA4J2J6V;
 				INFOPLIST_FILE = kadai1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "---.kadai1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
