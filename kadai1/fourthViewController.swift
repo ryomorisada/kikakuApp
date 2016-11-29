@@ -28,6 +28,8 @@ class fourthViewController: UIViewController {
         //answerDistinationのメンバ変数定義
         answerDistination1 = myAp.answerDistination1 as! Int
         answerDistination2 = myAp.answerDistination2 as! Int
+        
+        
 
         
         myImageView.image = UIImage(named:"02.jpg")

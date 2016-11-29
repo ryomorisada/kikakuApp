@@ -19,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //answerDistinationのグローバル変数定義
     var answerDistination1:Int = 0
     var answerDistination2:Int = 0
-    
+    //JSONの中身をグローバル変数で定義
+    var arr:NSArray = []
+    var dic1:NSDictionary = ["":""]
+    var dicTmp: NSDictionary = ["":""]
     
     //UserDefaultsに関する処理
     var myUserDafault:UserDefaults = UserDefaults()
