@@ -12,19 +12,34 @@ class fourthViewController: UIViewController {
 
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var checkResultLabel: UITextField!
-        @IBOutlet weak var resultLabel: UITextField!
+    @IBOutlet weak var resultLabel: UITextField!
+    //Appにアクセス
+    var myAp = UIApplication.shared.delegate as! AppDelegate
+    
     //answerDistinationのメンバ変数定義
-    var answerDistination1 = 0
-    var answerDistination2 = 0
-    
-     //segueを使わない画面遷移受け取り
-    
+    var answerDistination1: Int! = 0
+    var answerDistination2: Int! = 0
     
     override func viewDidLoad() {
+        //Appにアクセス
+        var myAp = UIApplication.shared.delegate as! AppDelegate
+        
+       
+        //answerDistinationのメンバ変数定義
+        answerDistination1 = myAp.answerDistination1 as! Int
+        answerDistination2 = myAp.answerDistination2 as! Int
+
+        
         myImageView.image = UIImage(named:"02.jpg")
         
         if answerDistination1 == -1 {
         resultLabel.text = "捨てる"
+        }
+        if answerDistination1 == -2 {
+            resultLabel.text = "捨てない"
+        }
+        if answerDistination2 == -1 {
+            resultLabel.text = "捨てる"
         }
         if answerDistination2 == -2 {
         resultLabel.text = "捨てない"

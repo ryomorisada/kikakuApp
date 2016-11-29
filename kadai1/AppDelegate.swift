@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let myGanre = ["服,靴","本","電子機器","ぬいぐるみ","文房具","化粧品","思い出の品"]
     //空っぽの変数
     let answer = ""
+    //answerDistinationのグローバル変数定義
+    var answerDistination1:Int = 0
+    var answerDistination2:Int = 0
+    
     
     //UserDefaultsに関する処理
     var myUserDafault:UserDefaults = UserDefaults()
