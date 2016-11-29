@@ -13,7 +13,6 @@ import MobileCoreServices
 class comentViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var myImage: UIImageView!
-    @IBOutlet weak var myTextView: UITextField!
     var comentList = NSMutableArray()
     // ユーザーデフォルトを用意する
     var myDefault = UserDefaults.standard
@@ -88,20 +87,20 @@ class comentViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         
     }
     //Returnキー押下時の呼び出しメソッド
-    func textFieldShouldReturn(textField:UITextField) -> Bool {
-        
-        //キーボードをしまう
-        self.view.endEditing(true)
-        
-        //ラベルの文字列を保存する。
-        myDefault.set(myTextView.text, forKey:"labelText")
-        
-        //plistファイルへの出力と同期する。
-        myDefault.synchronize()
-        
-        return false
-    }
-    
+//    func textFieldShouldReturn(textField:UITextField) -> Bool {
+//        
+//        //キーボードをしまう
+//        self.view.endEditing(true)
+//        
+//        //ラベルの文字列を保存する。
+//        myDefault.set(myTextView.text, forKey:"labelText")
+//        
+//        //plistファイルへの出力と同期する。
+//        myDefault.synchronize()
+//        
+//        return false
+//    }
+//    
 
     
     
