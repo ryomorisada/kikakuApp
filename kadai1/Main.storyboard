@@ -19,9 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sna-Yp-lPd"/>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yga-sQ-sRR">
-                                <frame key="frameInset" minX="107" minY="271" width="107" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yga-sQ-sRR">
                                 <color key="backgroundColor" red="0.16832205164973257" green="0.71297907800435989" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="eap-1D-FVQ"/>
+                                    <constraint firstAttribute="width" constant="107" id="gO9-7a-LKx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="診断する">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,10 +47,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcx-Sn-8zx">
-                                <frame key="frameInset" minX="169" minY="406" width="123" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcx-Sn-8zx">
                                 <color key="backgroundColor" red="1" green="0.95834476783707667" blue="0.15735878968094452" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="Hnh-VQ-4ng"/>
+                                    <constraint firstAttribute="width" constant="123" id="VRH-Md-uZD"/>
+                                </constraints>
                                 <state key="normal" title="アルバム">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -61,10 +66,12 @@
                                     <segue destination="rhD-d9-edX" kind="show" id="1Ys-DL-zGY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gst-iu-4Um">
-                                <frame key="frameInset" minX="28" minY="406" width="123" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gst-iu-4Um">
                                 <color key="backgroundColor" red="1" green="0.19197785473177165" blue="0.93782568796649346" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="EmH-tA-Xqp"/>
+                                    <constraint firstAttribute="height" constant="71" id="Uf6-IM-hkq"/>
+                                </constraints>
                                 <state key="normal" title="カメラ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -82,14 +89,21 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Yga-sQ-sRR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0L6-er-l7a"/>
                             <constraint firstItem="qju-eo-FFO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-120" id="6tx-Z3-gYs"/>
                             <constraint firstItem="qju-eo-FFO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8iG-2W-p3q"/>
-                            <constraint firstItem="Yga-sQ-sRR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KAV-TU-Qqb"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wcx-Sn-8zx" secondAttribute="trailing" constant="16" id="HYz-3Y-DZD"/>
+                            <constraint firstItem="Gst-iu-4Um" firstAttribute="top" secondItem="Yga-sQ-sRR" secondAttribute="bottom" constant="128.5" id="N3d-hm-6z9"/>
+                            <constraint firstItem="Gst-iu-4Um" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="23" id="SLT-cA-Qbg"/>
                             <constraint firstItem="sna-Yp-lPd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="TbS-Px-4Eg"/>
+                            <constraint firstItem="Yga-sQ-sRR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vgz-HA-hm5"/>
+                            <constraint firstItem="wcx-Sn-8zx" firstAttribute="leading" secondItem="Gst-iu-4Um" secondAttribute="trailing" constant="35" id="WaJ-VD-RNt"/>
                             <constraint firstAttribute="trailing" secondItem="sna-Yp-lPd" secondAttribute="trailing" id="hO8-zP-ajE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sna-Yp-lPd" secondAttribute="bottom" id="me4-By-P12"/>
+                            <constraint firstItem="Yga-sQ-sRR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="osu-IL-KY1"/>
+                            <constraint firstItem="wcx-Sn-8zx" firstAttribute="leading" secondItem="Gst-iu-4Um" secondAttribute="trailing" constant="35" id="oxM-bG-s6Z"/>
                             <constraint firstItem="sna-Yp-lPd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uQm-r6-gl8"/>
+                            <constraint firstItem="wcx-Sn-8zx" firstAttribute="top" secondItem="Yga-sQ-sRR" secondAttribute="bottom" constant="128.5" id="x1i-OI-C99"/>
+                            <constraint firstItem="wcx-Sn-8zx" firstAttribute="leading" secondItem="Gst-iu-4Um" secondAttribute="trailing" constant="35" id="y4N-A6-8zf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="捨てる" id="yfh-Y8-gRw"/>
@@ -447,8 +461,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1Ys-DL-zGY"/>
         <segue reference="4S9-jF-sfh"/>
+        <segue reference="1Ys-DL-zGY"/>
         <segue reference="d1A-eO-y7k"/>
     </inferredMetricsTieBreakers>
 </document>

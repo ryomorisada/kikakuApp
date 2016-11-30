@@ -15,7 +15,7 @@
 },
 {
 "Genre":"questionCloth",
-"questionCloth" : ["質問2", "その服はお気に入りで繰り返し使用したいですか?"],
+"question" : ["質問2", "その服はお気に入りで繰り返し使用したいですか?"],
 "questionNo":3,
 "answerDistination1":-2,
 "answerDistination2":-1,
