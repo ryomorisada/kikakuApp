@@ -45,8 +45,8 @@
 "Genre":"questionDoll",
 "question" : ["質問1", "部屋にぬいぐるみが3つ以上ありますか?"],
 "questionNo":1,
-"answerDistination1":-2,
-"answerDistination2":2,
+"answerDistination1":2,
+"answerDistination2":-2,
 },
 {
 "Genre":"questionDoll",
