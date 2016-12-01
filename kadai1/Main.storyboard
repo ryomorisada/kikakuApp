@@ -181,7 +181,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
-                                    <segue destination="l45-yf-nuG" kind="unwind" unwindAction="returnMenuWithSegue:" id="aEo-dh-1Zo"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ctd-Zz-6ML"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wbb-Sv-nmC">
@@ -223,14 +223,13 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFZ-mX-QNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="l45-yf-nuG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1055" y="899"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="O02-lE-uAn">
             <objects>
-                <viewController id="732-dL-dyk" customClass="cameraViewController" customModule="kadai1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cameraViewController" id="732-dL-dyk" customClass="cameraViewController" customModule="kadai1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mNf-Xl-fmo"/>
                         <viewControllerLayoutGuide type="bottom" id="Ydv-eW-tWZ"/>
@@ -243,57 +242,72 @@
                                 <frame key="frameInset" minX="40" minY="28" width="240" height="277"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FN2-nU-5UC">
-                                <frame key="frameInset" minX="24" minY="342" width="271" height="64"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ump-gL-N0F">
+                                <frame key="frameInset" minX="36" minY="407" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ump-gL-N0F">
-                                <frame key="frameInset" minX="40" minY="501" width="32" height="30"/>
                                 <state key="normal" title="start"/>
                                 <connections>
                                     <action selector="bCameraStart:" destination="732-dL-dyk" eventType="touchUpInside" id="anH-gk-g9c"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5W-3L-q4r">
-                                <frame key="frameInset" minX="137" minY="501" width="32" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5W-3L-q4r">
+                                <frame key="frameInset" minX="134" minY="407" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="save"/>
                                 <connections>
-                                    <action selector="savePic:" destination="732-dL-dyk" eventType="touchUpInside" id="y4o-rI-NGz"/>
+                                    <action selector="savePic:" destination="732-dL-dyk" eventType="touchUpInside" id="zmX-Hw-raM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMj-Qm-B8H">
-                                <frame key="frameInset" minX="238" minY="501" width="42" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMj-Qm-B8H">
+                                <frame key="frameInset" minX="238" minY="407" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="album"/>
                                 <connections>
                                     <action selector="showAlbum:" destination="732-dL-dyk" eventType="touchUpInside" id="C2b-iZ-DgI"/>
                                     <segue destination="rhD-d9-edX" kind="show" id="W5h-Ww-Yfb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="コメントを入力してください" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2g5-8d-tBg">
-                                <frame key="frameInset" minX="51" minY="422" width="244" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="コメントを入力してください" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2g5-8d-tBg">
+                                <frame key="frameInset" minX="36" minY="346" width="244" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YG-wh-17V">
+                                <frame key="frameInset" minX="91" minY="474" width="135" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.23222816399999999" green="0.093149230390000004" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="return to menu"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backMenuBtn:" destination="ggq-QY-Wje" eventType="touchUpInside" id="8OJ-IE-hxs"/>
+                                    <action selector="yesBtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="VsV-Wl-bga"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="aYo-EI-vdP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtR-M0-T8d">
+                                <frame key="frameInset" minX="40" minY="317" width="240" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="lMj-Qm-B8H" firstAttribute="height" secondItem="Ump-gL-N0F" secondAttribute="height" id="8fU-ox-iIS"/>
-                            <constraint firstItem="r5W-3L-q4r" firstAttribute="height" secondItem="Ump-gL-N0F" secondAttribute="height" id="EV6-Il-gPx"/>
-                            <constraint firstItem="lMj-Qm-B8H" firstAttribute="width" secondItem="Ump-gL-N0F" secondAttribute="width" id="QqM-CP-iHg"/>
-                            <constraint firstItem="r5W-3L-q4r" firstAttribute="width" secondItem="Ump-gL-N0F" secondAttribute="width" id="RXf-oB-cbN"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="bAlbum" destination="lMj-Qm-B8H" id="3sU-Sq-QzU"/>
                         <outlet property="bCameraStart" destination="Ump-gL-N0F" id="FEl-BO-zxq"/>
                         <outlet property="bSavePic" destination="r5W-3L-q4r" id="w2u-09-eBK"/>
                         <outlet property="cameraView" destination="slt-5r-E1I" id="FKK-5H-0jW"/>
-                        <outlet property="label" destination="FN2-nU-5UC" id="pHX-sz-Oeu"/>
+                        <outlet property="myLabel" destination="BtR-M0-T8d" id="SkP-MZ-frx"/>
                         <outlet property="mytextView" destination="2g5-8d-tBg" id="ZZc-vw-DMC"/>
                     </connections>
                 </viewController>
@@ -461,8 +475,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4S9-jF-sfh"/>
-        <segue reference="1Ys-DL-zGY"/>
-        <segue reference="d1A-eO-y7k"/>
+        <segue reference="aYo-EI-vdP"/>
+        <segue reference="AUV-h0-tC4"/>
+        <segue reference="W5h-Ww-Yfb"/>
     </inferredMetricsTieBreakers>
 </document>

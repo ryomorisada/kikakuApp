@@ -18,23 +18,27 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     @IBOutlet weak var bAlbum: UIButton!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var mytextView: UITextField!
-    
     var comentList = NSMutableArray()
-    // ユーザーデフォルトを用意する
+    let image:UIImage! = nil
+
+    // ユーザーデフォルトを定義
     var myDefault = UserDefaults.standard
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = "Tap the [Start] to take a picture"
         
+        label.text = "Startボタンを押してカメラを起動してください"
         comentList = [["coment":"","picture":""]]
-
+        mytextView.text = ""
+        mytextView.placeholder = "コメントを入力してください"
         // Do any additional setup after loading the view.
     }
-
-    @IBAction func bCameraStart(_ sender: UIButton) {
+    
+    // カメラの撮影開始
+    @IBAction func cameraStart(_ sender : AnyObject) {
+        
         let sourceType:UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.camera
         // カメラが利用可能かチェック
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
@@ -78,11 +82,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
         let image:UIImage! = cameraView.image
         
         if image != nil {
-            if #available(iOS 10.0, *) {
-                UIImageWriteToSavedPhotosAlbum(image, self, #selector(cameraViewController.image(_:didFinishSavingWithError:contextInfo:)), nil)
-            } else {
-                // Fallback on earlier versions
-            }
+            UIImageWriteToSavedPhotosAlbum(image, self, #selector(cameraViewController.image(_:didFinishSavingWithError:contextInfo:)), nil)
         }
         else{
             label.text = "image Failed !"
@@ -105,6 +105,112 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     
     // アルバムを表示
     @IBAction func showAlbum(_ sender : AnyObject) {
+        let sourceType:UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary){
+            // インスタンスの作成
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true, completion: nil)
+            
+            label.text = "Tap the [Start] to save a picture"
+        }
+        else{
+            label.text = "error"
+            
+        }
+        
+    }
+
+//    @IBAction func bCameraStart(_ sender: UIButton) {
+//        let sourceType:UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.camera
+//        // カメラが利用可能かチェック
+//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
+//            // インスタンスの作成
+//            let cameraPicker = UIImagePickerController()
+//            cameraPicker.sourceType = sourceType
+//            cameraPicker.delegate = self
+//            self.present(cameraPicker, animated: true, completion: nil)
+//            
+//        }
+//        else{
+//            myLabel.text = "error"
+//            
+//        }
+//    }
+//    
+//    //　撮影が完了時した時に呼ばれる
+//    func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+//        
+//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+//            cameraView.contentMode = .scaleAspectFit
+//            cameraView.image = pickedImage
+//            
+//        }
+//        
+//        //閉じる処理
+//        imagePicker.dismiss(animated: true, completion: nil)
+//        myLabel.text = "Tap the [Save] to save a picture"
+//        
+//    }
+//    
+//    // 撮影がキャンセルされた時に呼ばれる
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        picker.dismiss(animated: true, completion: nil)
+//    myLabel.text = "Canceled"
+//    }
+//    
+//    
+//    // 写真を保存
+//    @IBAction func savePic(_ sender: AnyObject) {
+//        
+//    
+//    }
+
+    
+    
+    
+    
+//    @IBAction func savePic(_ sender : AnyObject) {
+//        let image:UIImage! = cameraView.image
+//        
+//        if image != nil {
+//            if #available(iOS 10.0, *) {
+//                UIImageWriteToSavedPhotosAlbum(image, self, #selector(cameraViewController.cameraViewimage(_:didFinishSavingWithError:contextInfo:)), nil)
+//            } else {
+//                // Fallback on earlier versions
+//            }
+//        }
+//        else{
+//            myLabel.text = "image Failed !"
+//        }
+//
+////        func accessCameraroll(button: UIButton) {
+////            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+////                let controller = UIImagePickerController()
+////                controller.delegate = self
+////                controller.sourceType = UIImagePickerControllerSourceType.photoLibrary
+////                self.present(controller, animated: true, completion: nil)
+////            }
+////    }
+//    
+//    
+//    // 書き込み完了結果の受け取り
+//    func image(_ image: UIImage, didFinishSavingWithError error: NSError!, contextInfo: UnsafeMutableRawPointer) {
+//        print("1")
+//        
+//        if error != nil {
+//            print(error.code)
+//            myLabel.text = "保存に失敗しました"
+//        }
+//        else{
+//            myLabel.text = "保存しました"
+//        }
+//    }
+//    
+//    // アルバムを表示
+//    @IBAction func showAlbum(_ sender : AnyObject) {
 //        let sourceType:UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.photoLibrary
 //        
 //        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary){
@@ -114,73 +220,75 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
 //            cameraPicker.delegate = self
 //            self.present(cameraPicker, animated: true, completion: nil)
 //            
-//            label.text = "Tap the [Start] to save a picture"
+//            myLabel.text = "Tap the [Start] to save a picture"
 //        }
 //        else{
-//            label.text = "error"
+//            myLabel.text = "エラー"
+//    }
+//        
+//        
+//        
+//        //UserDefaultから取り出す
+//        // ユーザーデフォルトを用意する
+//        var myDefault = UserDefaults.standard
+//        
+//        // データを取り出す
+//        let strURL = myDefault.string(forKey: "selectedPhotoURL")
+//        
+//        if strURL != nil{
+//            
+//            let url = URL(string: strURL as String!)
+//            let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
+//            let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
+//            let manager: PHImageManager = PHImageManager()
+//            manager.requestImage(for: asset,targetSize: CGSize(width: 5, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
+//                self.cameraView.image = image
+//            }
 //        }
-        
-        //UserDefaultから取り出す
-        // ユーザーデフォルトを用意する
-        var myDefault = UserDefaults.standard
-        
-        // データを取り出す
-        let strURL = myDefault.string(forKey: "selectedPhotoURL")
-        
-        if strURL != nil{
-            
-            let url = URL(string: strURL as String!)
-            let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
-            let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
-            let manager: PHImageManager = PHImageManager()
-            manager.requestImage(for: asset,targetSize: CGSize(width: 5, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
-                self.cameraView.image = image
-            }
-        }
+//        }
 
         
     
     //カメラロールで写真を選んだ後
-    func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        
-        let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]! as AnyObject
-        
-        let strURL:String = assetURL.description
-        
-        print(strURL)
-        
-        
-        // ユーザーデフォルトを用意する
-        myDefault = UserDefaults.standard
-        
-        // データを書き込んで
-        myDefault.set(strURL, forKey: "selectedPhotoURL")
-        
-        // 即反映させる
-        myDefault.synchronize()
-        
-        //閉じる処理
-        imagePicker.dismiss(animated: true, completion: nil)
-        
-    }
-    //Returnキー押下時の呼び出しメソッド
-    func textFieldShouldReturn(textField:UITextField) -> Bool {
-        
-        //キーボードをしまう
-        self.view.endEditing(true)
-        
-        //ラベルの文字列を保存する。
-        myDefault.set(mytextView.text, forKey:"labelText")
-        
-        //plistファイルへの出力と同期する。
-        myDefault.synchronize()
-        
-        return false
-    }
+//    func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+//        
+//        
+//        let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]! as AnyObject
+//        
+//        let strURL:String = assetURL.description
+//        
+//        print(strURL)
+//        
+//        
+//        // ユーザーデフォルトを用意する
+//        myDefault = UserDefaults.standard
+//        
+//        // データを書き込んで
+//        myDefault.set(strURL, forKey: "selectedPhotoURL")
+//        
+//        // 即反映させる
+//        myDefault.synchronize()
+//        
+//        //閉じる処理
+//        imagePicker.dismiss(animated: true, completion: nil)
+//        
+//    }
+//    //Returnキー押下時の呼び出しメソッド
+//    func textFieldShouldReturn(textField:UITextField) -> Bool {
+//        
+//        //キーボードをしまう
+//        self.view.endEditing(true)
+//        
+//        //ラベルの文字列を保存する。
+//        myDefault.set(mytextView.text, forKey:"labelText")
+//        
+//        //plistファイルへの出力と同期する。
+//        myDefault.synchronize()
+//        
+//        return false
+//    }
 
-        
-    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
