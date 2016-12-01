@@ -30,8 +30,6 @@ class fourthViewController: UIViewController {
         answerDistination2 = myAp.answerDistination2 as! Int
         
         
-
-        
         myImageView.image = UIImage(named:"02.jpg")
         
         if answerDistination1 == -1 {
