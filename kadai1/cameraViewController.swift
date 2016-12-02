@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 import MobileCoreServices
+import AVFoundation
 
 class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -22,7 +23,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     let image:UIImage! = nil
 
     // ユーザーデフォルトを定義
-    var myDefault = UserDefaults.standard
+    var myDefault = UserDefaults.resetStandardUserDefaults()
     
     
     
@@ -35,6 +36,8 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
         mytextView.placeholder = "コメントを入力してください"
         // Do any additional setup after loading the view.
     }
+    
+    
     
     // カメラの撮影開始
     @IBAction func cameraStart(_ sender : AnyObject) {
@@ -120,7 +123,6 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             label.text = "error"
             
         }
-        
     }
 
 //    @IBAction func bCameraStart(_ sender: UIButton) {
