@@ -29,15 +29,14 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //蓄積されたデータがあったら
+        
         label.text = "Startを押してカメラを起動してください"
         comentList = [["coment":"","picture":""]]
         mytextView.text = ""
         mytextView.placeholder = "コメントを入力してください"
-        
+        //蓄積されたデータがあったら
         if (myDefault.object(forKey: "comentList") != nil){
-            
-            //データを取り出して、diaryListを更新(ダウンキャストで型変換)
+        //データを取り出して、diaryListを更新(ダウンキャストで型変換)
             var comentListTmp: NSMutableArray  = myDefault.object(forKey: "comentList") as! NSMutableArray
             comentList = comentListTmp.mutableCopy() as! NSMutableArray
         }
@@ -104,6 +103,10 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             label.text = "image Failed !"
         }
         
+    
+    
+    
+    
     }
     
     // 書き込み完了結果の受け取り
@@ -122,9 +125,6 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     // アルバムを表示
     @IBAction func showAlbum(_ sender : AnyObject) {
         //UserDefaultから取り出す
-        // ユーザーデフォルトを用意する
-        var myDefault = UserDefaults.standard
-        
         // データを取り出す
         let strURL = myDefault.string(forKey: "selectedPhotoURL")
         
@@ -176,7 +176,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             self.view.endEditing(true)
             
             //ラベルの文字列を保存する。
-            myDefault.set(mytextView.text, forKey:"labelText")
+            myDefault.set(mytextView.text, forKey:"coment")
             
             //plistファイルへの出力と同期する。
             myDefault.synchronize()

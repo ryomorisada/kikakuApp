@@ -11,9 +11,27 @@ import Photos
 
 class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     var photoAssets = [PHAsset]()
+    var myDefault = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //userDefaultの内容の取り出しの処理
+        // データを取り出す
+        let strURL = myDefault.string(forKey: "selectedPhotoURL")
+        print(strURL)
+        
+        
+//        if strURL != nil{
+//            
+//            let url = URL(string: strURL as String!)
+//            let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
+//            let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
+//            let manager: PHImageManager = PHImageManager()
+//            manager.requestImage(for: asset,targetSize: CGSize(width: 5, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
+//                self.cameraView.image = image
+//            }
+//        }
+
 
     
     
