@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Photos
 
 class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+    var photoAssets = [PHAsset]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +19,17 @@ class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectio
     
         // Do any additional setup after loading the view.
     }
+    func getAllPhotosInfo() {
+        photoAssets = []
+        
+//        // 画像をすべて取得
+//        var assets: PHFetchResult = PHAsset.fetchAssets(with: .image, options: nil)
+//        assets.enumerateObjects { (asset, index, stop) -> Void in
+//            self.photoAssets.append(asset as PHAsset)
+//        }
+//        print(photoAssets)
+    }
+    
 
     //セクション数を決める
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -247,7 +247,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="start"/>
                                 <connections>
-                                    <action selector="bCameraStart:" destination="732-dL-dyk" eventType="touchUpInside" id="anH-gk-g9c"/>
+                                    <action selector="bCameraStart:" destination="732-dL-dyk" eventType="touchUpInside" id="xC3-3x-Od7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5W-3L-q4r">
@@ -267,13 +267,6 @@
                                     <segue destination="rhD-d9-edX" kind="show" id="W5h-Ww-Yfb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="コメントを入力してください" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2g5-8d-tBg">
-                                <frame key="frameInset" minX="36" minY="346" width="244" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YG-wh-17V">
                                 <frame key="frameInset" minX="91" minY="474" width="135" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -292,8 +285,15 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="aYo-EI-vdP"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="コメントを入力してください" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2g5-8d-tBg">
+                                <frame key="frameInset" minX="38" minY="369" width="244" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtR-M0-T8d">
-                                <frame key="frameInset" minX="40" minY="317" width="240" height="21"/>
+                                <frame key="frameInset" minY="321" width="320" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -307,7 +307,7 @@
                         <outlet property="bCameraStart" destination="Ump-gL-N0F" id="FEl-BO-zxq"/>
                         <outlet property="bSavePic" destination="r5W-3L-q4r" id="w2u-09-eBK"/>
                         <outlet property="cameraView" destination="slt-5r-E1I" id="FKK-5H-0jW"/>
-                        <outlet property="myLabel" destination="BtR-M0-T8d" id="SkP-MZ-frx"/>
+                        <outlet property="label" destination="BtR-M0-T8d" id="afm-Tc-Emf"/>
                         <outlet property="mytextView" destination="2g5-8d-tBg" id="ZZc-vw-DMC"/>
                     </connections>
                 </viewController>

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4606BA211DEACBC60094B45B /* comentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606BA201DEACBC60094B45B /* comentViewController.swift */; };
 		460791931DE0099900350F7F /* fourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460791921DE0099900350F7F /* fourthViewController.swift */; };
 		46408B131DEDB6C1007EF99F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46408B121DEDB6C1007EF99F /* Main.storyboard */; };
 		464BC3B71DE1BCF6005AE905 /* fifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */; };
@@ -43,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4606BA201DEACBC60094B45B /* comentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = comentViewController.swift; sourceTree = "<group>"; };
 		460791921DE0099900350F7F /* fourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fourthViewController.swift; sourceTree = "<group>"; };
 		46408B121DEDB6C1007EF99F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fifthViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				460791921DE0099900350F7F /* fourthViewController.swift */,
 				464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */,
 				46408B121DEDB6C1007EF99F /* Main.storyboard */,
-				4606BA201DEACBC60094B45B /* comentViewController.swift */,
 				4660E5541DEDAC0B00766D17 /* cameraViewController.swift */,
 				46BD32971DEAB289005EBC3A /* room01.jpg */,
 				46BD32991DEABB25005EBC3A /* 02.jpg */,
@@ -292,7 +289,6 @@
 			files = (
 				460791931DE0099900350F7F /* fourthViewController.swift in Sources */,
 				469839D51DCCC0710042A9F5 /* ViewController.swift in Sources */,
-				4606BA211DEACBC60094B45B /* comentViewController.swift in Sources */,
 				464BC3B71DE1BCF6005AE905 /* fifthViewController.swift in Sources */,
 				469895BE1DDAAF4F0061B130 /* secondViewController.swift in Sources */,
 				4660E5551DEDAC0B00766D17 /* cameraViewController.swift in Sources */,
