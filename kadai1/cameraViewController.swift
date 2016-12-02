@@ -23,18 +23,26 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     var image:UIImage! = nil
 
     // ユーザーデフォルトを定義
-    var myDefault = UserDefaults.resetStandardUserDefaults()
+    var myDefault = UserDefaults.standard
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        //蓄積されたデータがあったら
         label.text = "Startを押してカメラを起動してください"
         comentList = [["coment":"","picture":""]]
         mytextView.text = ""
         mytextView.placeholder = "コメントを入力してください"
+        
+        if (myDefault.object(forKey: "comentList") != nil){
+            
+            //データを取り出して、diaryListを更新(ダウンキャストで型変換)
+            var comentListTmp: NSMutableArray  = myDefault.object(forKey: "comentList") as! NSMutableArray
+            comentList = comentListTmp.mutableCopy() as! NSMutableArray
+        }
+        print(comentList)
+
         // Do any additional setup after loading the view.
     }
     
@@ -152,7 +160,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             comentList.add(["coment":mytextView.text,"picture":strURL])
             myDefault.set(comentList, forKey: "coment")
 
-            //            myDefault.set(strURL, forKey: "selectedPhotoURL")
+//            myDefault.set(strURL, forKey: "selectedPhotoURL")
             
             // 即反映させる
             myDefault.synchronize()
