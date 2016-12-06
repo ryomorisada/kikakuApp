@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--捨てる-->
+        <!--必要診断アプリ-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="kadai1" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,6 +63,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="BtnAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EVs-Ad-M4z"/>
                                     <segue destination="rhD-d9-edX" kind="show" id="1Ys-DL-zGY"/>
                                 </connections>
                             </button>
@@ -106,7 +107,7 @@
                             <constraint firstItem="wcx-Sn-8zx" firstAttribute="leading" secondItem="Gst-iu-4Um" secondAttribute="trailing" constant="35" id="y4N-A6-8zf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="捨てる" id="yfh-Y8-gRw"/>
+                    <navigationItem key="navigationItem" title="必要診断アプリ" id="yfh-Y8-gRw"/>
                     <connections>
                         <outlet property="myImageView" destination="sna-Yp-lPd" id="JXy-6K-Uaz"/>
                     </connections>
@@ -195,7 +196,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sWK-yI-TW5">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sWK-yI-TW5" customClass="customCellCollectionViewCell" customModule="kadai1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -206,7 +207,7 @@
                                                     <frame key="frameInset" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="324-D9-DGx">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="324-D9-DGx">
                                                     <frame key="frameInset" minY="100" width="100" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -215,8 +216,15 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="myImage" destination="4JN-nm-zSj" id="WSa-AY-Pbs"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="rhD-d9-edX" id="gNg-vs-h0X"/>
+                                    <outlet property="delegate" destination="rhD-d9-edX" id="zFg-Ep-Unv"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -243,36 +251,36 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ump-gL-N0F">
-                                <frame key="frameInset" minX="36" minY="407" width="32" height="30"/>
+                                <frame key="frameInset" minX="29" minY="407" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="start"/>
+                                <state key="normal" title="カメラ"/>
                                 <connections>
                                     <action selector="bCameraStart:" destination="732-dL-dyk" eventType="touchUpInside" id="xC3-3x-Od7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5W-3L-q4r">
-                                <frame key="frameInset" minX="134" minY="407" width="32" height="30"/>
+                                <frame key="frameInset" minX="135" minY="407" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="save"/>
+                                <state key="normal" title="保存"/>
                                 <connections>
                                     <action selector="savePic:" destination="732-dL-dyk" eventType="touchUpInside" id="zmX-Hw-raM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMj-Qm-B8H">
-                                <frame key="frameInset" minX="238" minY="407" width="42" height="30"/>
+                                <frame key="frameInset" minX="228" minY="407" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="album"/>
+                                <state key="normal" title="アルバム"/>
                                 <connections>
                                     <action selector="showAlbum:" destination="732-dL-dyk" eventType="touchUpInside" id="C2b-iZ-DgI"/>
-                                    <segue destination="rhD-d9-edX" kind="show" id="W5h-Ww-Yfb"/>
+                                    <segue destination="rhD-d9-edX" kind="show" identifier="goAlbum" id="W5h-Ww-Yfb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YG-wh-17V">
                                 <frame key="frameInset" minX="91" minY="474" width="135" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.23222816399999999" green="0.093149230390000004" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="return to menu"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="メニューに戻る"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -313,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKC-5E-Gwl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="255" y="900"/>
+            <point key="canvasLocation" x="165" y="900"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="Fnp-X5-YcA">
@@ -335,29 +343,31 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa3-Km-v0x">
-                                <frame key="frameInset" minX="71" minY="388" width="30" height="30"/>
+                                <frame key="frameInset" minX="71" minY="388" width="46" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Yes"/>
                                 <connections>
                                     <action selector="yesBtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="ZOK-qg-cya"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENN-4h-CW9">
-                                <frame key="frameInset" minX="218" minY="388" width="30" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Rb-97-mdc">
+                                <frame key="frameInset" minY="97" width="320" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENN-4h-CW9">
+                                <frame key="frameInset" minX="206" minY="396" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="No"/>
                                 <connections>
                                     <action selector="nobtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="QRR-aA-EmW"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Rb-97-mdc">
-                                <frame key="frameInset" minY="97" width="320" height="193"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -370,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsa-76-9nE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1772" y="900"/>
+            <point key="canvasLocation" x="1771.875" y="900"/>
         </scene>
         <!--Fourth View Controller-->
         <scene sceneID="Wj8-j4-68C">
@@ -389,15 +399,15 @@
                                 <frame key="frameInset" minX="83" minY="90" width="154" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIe-Ch-mAS">
                                 <frame key="frameInset" minX="89" minY="420" width="135" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.23222816401973712" green="0.093149230389644067" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="return to menu"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="メニューに戻る"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -410,18 +420,12 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="4S9-jF-sfh"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="捨てる" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ua5-WX-sLx">
-                                <frame key="frameInset" minX="89" minY="221" width="143" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUR-8I-kSi">
                                 <frame key="frameInset" minX="89" minY="338" width="135" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.19804269936565755" blue="0.94163141681357954" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="camera"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="カメラ"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="3"/>
@@ -434,11 +438,16 @@
                                     <segue destination="732-dL-dyk" kind="show" id="AUV-h0-tC4"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="捨てる" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ua5-WX-sLx">
+                                <frame key="frameInset" minX="80" minY="229" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ua5-WX-sLx" firstAttribute="centerY" secondItem="hRU-Jr-IsK" secondAttribute="centerY" id="DJd-Bj-DmM"/>
-                            <constraint firstItem="Ua5-WX-sLx" firstAttribute="centerX" secondItem="hRU-Jr-IsK" secondAttribute="centerX" id="EIJ-yk-2e1"/>
                             <constraint firstItem="Iur-DZ-MpF" firstAttribute="top" secondItem="mrb-Z3-e4f" secondAttribute="bottom" id="VaG-77-3I9"/>
                             <constraint firstAttribute="trailing" secondItem="mrb-Z3-e4f" secondAttribute="trailing" id="etc-za-fdH"/>
                             <constraint firstItem="mrb-Z3-e4f" firstAttribute="leading" secondItem="hRU-Jr-IsK" secondAttribute="leading" id="nNf-Sl-7bo"/>
@@ -453,7 +462,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBd-FC-3a9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2582" y="900"/>
+            <point key="canvasLocation" x="2581.875" y="900"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7tE-tj-8h1">
@@ -475,8 +484,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="d1A-eO-y7k"/>
         <segue reference="aYo-EI-vdP"/>
-        <segue reference="AUV-h0-tC4"/>
-        <segue reference="W5h-Ww-Yfb"/>
+        <segue reference="1Ys-DL-zGY"/>
     </inferredMetricsTieBreakers>
 </document>

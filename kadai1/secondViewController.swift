@@ -11,54 +11,40 @@ import UIKit
 class secondViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var myGanre: NSArray = []
     var selectedIndex = -1
+//    //画面遷移のための変数
+//    let thirdViewController = thirdViewController()
 
     @IBOutlet weak var myTableView: UITableView!
-    
     override func viewDidLoad() {
         //Appにアクセス
         var myAp = UIApplication.shared.delegate as! AppDelegate
         //メンバ変数にグローバル変数から代入
         myGanre = myAp.myGanre as NSArray
-        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     //行数の指定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myGanre.count
     }
-    
     //表示するセルの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
         cell.textLabel!.text = "\(myGanre[indexPath.row])"
         return cell
     }
-    
-    
     //選択されたときに行う処理(tableviewApp参照)answerに選択されたものを代入
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("\(indexPath.row)行目が選択されました")
-//         selectedIndex = indexPath.row
-//        
-//    
+//         selectedIndex = indexPath.row   
 //        performSegue(withIdentifier: "secondSegue", sender: nil)
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         var indexPath = myTableView.indexPathForSelectedRow
-        
         selectedIndex = (indexPath?.row)!
-        
-        //次画面へ渡すデータの代入処理を記述
+    //次画面へ渡すデータの代入処理を記述
         let secondVC = segue.destination as! thirdViewController
         secondVC.selectedIndex = selectedIndex
     }
-    
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

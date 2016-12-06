@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		460791931DE0099900350F7F /* fourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460791921DE0099900350F7F /* fourthViewController.swift */; };
+		462875CB1DF2F956006B6B88 /* customCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462875CA1DF2F956006B6B88 /* customCellCollectionViewCell.swift */; };
 		46408B131DEDB6C1007EF99F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46408B121DEDB6C1007EF99F /* Main.storyboard */; };
 		464BC3B71DE1BCF6005AE905 /* fifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */; };
 		464BE3861DDB2F11008226A1 /* thirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BE3851DDB2F11008226A1 /* thirdViewController.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		460791921DE0099900350F7F /* fourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fourthViewController.swift; sourceTree = "<group>"; };
+		462875CA1DF2F956006B6B88 /* customCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		46408B121DEDB6C1007EF99F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fifthViewController.swift; sourceTree = "<group>"; };
 		464BE3851DDB2F11008226A1 /* thirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = thirdViewController.swift; path = ../../thirdViewController.swift; sourceTree = "<group>"; };
@@ -119,8 +121,9 @@
 				464BE3851DDB2F11008226A1 /* thirdViewController.swift */,
 				460791921DE0099900350F7F /* fourthViewController.swift */,
 				464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */,
-				46408B121DEDB6C1007EF99F /* Main.storyboard */,
 				4660E5541DEDAC0B00766D17 /* cameraViewController.swift */,
+				46408B121DEDB6C1007EF99F /* Main.storyboard */,
+				462875CA1DF2F956006B6B88 /* customCellCollectionViewCell.swift */,
 				46BD32971DEAB289005EBC3A /* room01.jpg */,
 				46BD32991DEABB25005EBC3A /* 02.jpg */,
 				469839D91DCCC0710042A9F5 /* Assets.xcassets */,
@@ -217,7 +220,7 @@
 				TargetAttributes = {
 					469839CE1DCCC0710042A9F5 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = QDCA4J2J6V;
+						DevelopmentTeam = L5HBJ854V8;
 						ProvisioningStyle = Automatic;
 					};
 					469839E21DCCC0710042A9F5 = {
@@ -290,6 +293,7 @@
 				460791931DE0099900350F7F /* fourthViewController.swift in Sources */,
 				469839D51DCCC0710042A9F5 /* ViewController.swift in Sources */,
 				464BC3B71DE1BCF6005AE905 /* fifthViewController.swift in Sources */,
+				462875CB1DF2F956006B6B88 /* customCellCollectionViewCell.swift in Sources */,
 				469895BE1DDAAF4F0061B130 /* secondViewController.swift in Sources */,
 				4660E5551DEDAC0B00766D17 /* cameraViewController.swift in Sources */,
 				464BE3861DDB2F11008226A1 /* thirdViewController.swift in Sources */,
@@ -437,11 +441,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QDCA4J2J6V;
+				DEVELOPMENT_TEAM = L5HBJ854V8;
 				INFOPLIST_FILE = kadai1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "---.kadai1";
+				PRODUCT_BUNDLE_IDENTIFIER = myAprication001.kadai1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -451,11 +455,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QDCA4J2J6V;
+				DEVELOPMENT_TEAM = L5HBJ854V8;
 				INFOPLIST_FILE = kadai1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "---.kadai1";
+				PRODUCT_BUNDLE_IDENTIFIER = myAprication001.kadai1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

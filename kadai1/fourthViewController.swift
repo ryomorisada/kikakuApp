@@ -13,9 +13,7 @@ class fourthViewController: UIViewController {
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var checkResultLabel: UITextField!
     @IBOutlet weak var resultLabel: UITextField!
-    //Appにアクセス
     var myAp = UIApplication.shared.delegate as! AppDelegate
-    
     //answerDistinationのメンバ変数定義
     var answerDistination1: Int! = 0
     var answerDistination2: Int! = 0
@@ -23,15 +21,10 @@ class fourthViewController: UIViewController {
     override func viewDidLoad() {
         //Appにアクセス
         var myAp = UIApplication.shared.delegate as! AppDelegate
-        
-       
         //answerDistinationのメンバ変数定義
         answerDistination1 = myAp.answerDistination1 as! Int
         answerDistination2 = myAp.answerDistination2 as! Int
-        
-        
         myImageView.image = UIImage(named:"02.jpg")
-        
         if answerDistination1 == -1 {
         resultLabel.text = "捨てる"
         }
@@ -45,11 +38,8 @@ class fourthViewController: UIViewController {
         resultLabel.text = "捨てない"
         }
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-
-
     @IBAction func backMenuBtn(_ sender: UIButton) {
     }
     
