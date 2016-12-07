@@ -47,7 +47,7 @@
 		462875CA1DF2F956006B6B88 /* customCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		46408B121DEDB6C1007EF99F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fifthViewController.swift; sourceTree = "<group>"; };
-		464BE3851DDB2F11008226A1 /* thirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = thirdViewController.swift; path = ../../thirdViewController.swift; sourceTree = "<group>"; };
+		464BE3851DDB2F11008226A1 /* thirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = thirdViewController.swift; sourceTree = "<group>"; };
 		4660E5541DEDAC0B00766D17 /* cameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameraViewController.swift; sourceTree = "<group>"; };
 		469839CF1DCCC0710042A9F5 /* kadai1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kadai1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		469839D21DCCC0710042A9F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
