@@ -58,12 +58,14 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     //　撮影が完了時した時に呼ばれる
     func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-                       
             cameraView.contentMode = .scaleAspectFit
             cameraView.image = pickedImage
         }
-        //撮った写真を保存する処理を記載
+        //撮った写真を保存する処理を記載??
         
+        
+        
+
         let assetURL:AnyObject = info[UIImagePickerControllerOriginalImage] as! UIImage
 //        selectedUrl = assetURL.description
         
@@ -107,7 +109,6 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             // データを書き込んで
             comentList.add(["coment":mytextView.text,"picture":selectedUrl])
             myDefault.set(comentList, forKey: "comentList")
-            
             // 即反映させる
             myDefault.synchronize()
 //            //閉じる処理
