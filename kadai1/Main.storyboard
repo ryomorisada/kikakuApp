@@ -367,41 +367,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa3-Km-v0x">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa3-Km-v0x">
                                 <frame key="frameInset" minX="71" minY="388" width="46" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="H6o-a6-4Me"/>
+                                    <constraint firstAttribute="height" constant="46" id="N8q-u8-E55"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Yes"/>
                                 <connections>
                                     <action selector="yesBtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="ZOK-qg-cya"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Rb-97-mdc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Rb-97-mdc">
                                 <frame key="frameInset" minY="97" width="320" height="270"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="CmU-oe-YYv"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENN-4h-CW9">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENN-4h-CW9">
                                 <frame key="frameInset" minX="206" minY="396" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LqE-Cc-oRv"/>
+                                    <constraint firstAttribute="width" constant="30" id="YPU-1a-5Le"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="No"/>
                                 <connections>
                                     <action selector="nobtn:" destination="ng4-rl-j2K" eventType="touchUpInside" id="QRR-aA-EmW"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="質問１" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ecj-IJ-noY">
-                                <frame key="frameInset" minX="112" minY="59" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="質問１" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ecj-IJ-noY">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="I6T-Vc-ePp"/>
+                                    <constraint firstAttribute="width" constant="97" id="No7-id-Ua5"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ecj-IJ-noY" firstAttribute="top" secondItem="uM8-H5-bIY" secondAttribute="bottom" constant="40" id="4Jk-ga-zrP"/>
+                            <constraint firstAttribute="trailing" secondItem="9Rb-97-mdc" secondAttribute="trailing" id="4tl-Lt-MDC"/>
+                            <constraint firstItem="ENN-4h-CW9" firstAttribute="leading" secondItem="fa3-Km-v0x" secondAttribute="trailing" constant="89" id="55l-iz-l0o"/>
+                            <constraint firstItem="ENN-4h-CW9" firstAttribute="leading" secondItem="fa3-Km-v0x" secondAttribute="trailing" constant="90" id="Ail-oe-p05"/>
+                            <constraint firstItem="9Rb-97-mdc" firstAttribute="top" secondItem="ecj-IJ-noY" secondAttribute="bottom" constant="8" id="ClW-FT-ysZ"/>
+                            <constraint firstItem="ENN-4h-CW9" firstAttribute="top" secondItem="9Rb-97-mdc" secondAttribute="bottom" constant="20" id="Pht-vW-NzK"/>
+                            <constraint firstItem="fa3-Km-v0x" firstAttribute="top" secondItem="9Rb-97-mdc" secondAttribute="bottom" constant="20" id="eLU-Md-L5V"/>
+                            <constraint firstItem="ecj-IJ-noY" firstAttribute="centerX" secondItem="BLN-W5-qIp" secondAttribute="centerX" id="hVL-yl-Llt"/>
+                            <constraint firstItem="9Rb-97-mdc" firstAttribute="leading" secondItem="BLN-W5-qIp" secondAttribute="leading" id="nF5-Es-baf"/>
+                            <constraint firstItem="jEA-jp-iXD" firstAttribute="top" secondItem="fa3-Km-v0x" secondAttribute="bottom" constant="134" id="o14-rA-lBU"/>
+                            <constraint firstItem="jEA-jp-iXD" firstAttribute="top" secondItem="ENN-4h-CW9" secondAttribute="bottom" constant="134" id="xu0-Ht-X4D"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="option1Btn" destination="fa3-Km-v0x" id="CQd-jd-JJp"/>
