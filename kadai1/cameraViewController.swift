@@ -25,6 +25,8 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     var comentDic:NSDictionary! = [:]
     var myDefault = UserDefaults.standard
     var selectedUrl = ""
+    var localID = ""
+    var comentListText:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,10 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
         mytextView.text = ""
         mytextView.placeholder = "コメントを入力してください"
         //蓄積されたデータがあったら
+        //userDefault全削除
+        myDefault.removeObject(forKey: "comentList")
+        
+        
         if (myDefault.object(forKey: "comentList") != nil){
         //データを取り出して、diaryListを更新(ダウンキャストで型変換)
         var comentListTmp: NSMutableArray  = myDefault.object(forKey: "comentList") as! NSMutableArray
@@ -58,22 +64,43 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     //　撮影が完了時した時に呼ばれる
     func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            cameraView.contentMode = .scaleAspectFit
-            cameraView.image = pickedImage
+            //            cameraView.contentMode = .scaleAspectFit
+            //            cameraView.image = pickedImage
+            // When taking a picture with the camera, store it in the user roll
+            PHPhotoLibrary.shared().performChanges(
+                { () -> Void in
+                    // save the image
+                    var assetChangeRequest:PHAssetChangeRequest = PHAssetCreationRequest.creationRequestForAsset(from: pickedImage)
+                    self.localID = (assetChangeRequest.placeholderForCreatedAsset?.localIdentifier)!
+                    print(self.localID)
+                    // TODO how to get the asset url
+                }, completionHandler:
+                { (finished, error) -> Void in
+                    if (finished)
+                    {
+                        print(self.localID)
+                        self.selectedUrl = "assets-library://asset/asset.JPG?id="+self.localID+"&ext=JPG"
+                        print(self.selectedUrl)
+                        
+                        //確認用
+                        let url = URL(string: self.selectedUrl as String!)
+                        let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
+                        let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
+                        let manager: PHImageManager = PHImageManager()
+                        manager.requestImage(for: asset,targetSize: CGSize(width: 5, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
+                            self.cameraView.image = image
+                        }
+                    }
+                }
+            )
         }
-        //撮った写真を保存する処理を記載??
-        
-        
-        
+        print(info)
 
-        let assetURL:AnyObject = info[UIImagePickerControllerOriginalImage] as! UIImage
-//        selectedUrl = assetURL.description
-        
-        
         //閉じる処理
         imagePicker.dismiss(animated: true, completion: nil)
         label.text = "保存を押して写真を保存"
         }
+    
     // 撮影がキャンセルされた時に呼ばれる
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
@@ -88,6 +115,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             } else {
             }
             //カメラロールで写真を選んだ後
+            
 //            func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 //                let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]! as AnyObject
 //                let strURL:String = assetURL.description
@@ -106,9 +134,17 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
 
             //userDefaultに保存する処理
             myDefault = UserDefaults.standard
+//            //userDefault全削除
+//            myDefault.removeObject(forKey: "comentList")
+            
+            //
+            comentListText = mytextView.text! as String
+            
             // データを書き込んで
-            comentList.add(["coment":mytextView.text,"picture":selectedUrl])
+            comentList.add(["coment":comentListText,"picture":selectedUrl])
+            print(comentList)
             myDefault.set(comentList, forKey: "comentList")
+            
             // 即反映させる
             myDefault.synchronize()
 //            //閉じる処理
@@ -116,8 +152,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
         }
         else{
             label.text = "保存に失敗しました"
-        }
-        
+        }        
     }
     // 書き込み完了結果の受け取り
     func image(_ image: UIImage, didFinishSavingWithError error: NSError!, contextInfo: UnsafeMutableRawPointer) {
@@ -171,6 +206,21 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             return false
         }
     }
+    //カメラロールから写真を選択する処理
+    @IBAction func cameraRollBtn(_ sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {    //追記
+            //写真ライブラリ(カメラロール)表示用のViewControllerを宣言
+            let controller = UIImagePickerController()
+            controller.delegate = self
+            //新しく宣言したViewControllerでカメラとカメラロールのどちらを表示するかを指定
+            controller.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            //トリミング
+            controller.allowsEditing = true
+            //新たに追加したカメラロール表示ViewControllerをpresentViewControllerにする
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "goAlubum"){
             let fifthVC = (segue.destination as? fifthViewController)!

@@ -15,6 +15,7 @@ class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectio
     var cell = customCellCollectionViewCell()
     var comentList: NSMutableArray = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //userDefaultの内容の取り出しの処理
