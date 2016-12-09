@@ -31,7 +31,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = "Startを押してカメラを起動してください"
-        comentList = [["coment":"","picture":""]]
+//        comentList[Dictionary] = nil
         mytextView.text = ""
         mytextView.placeholder = "コメントを入力してください"
         //蓄積されたデータがあったら
@@ -92,10 +92,8 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
                         }
                     }
                 }
-            )
-        }
+            )}
         print(info)
-
         //閉じる処理
         imagePicker.dismiss(animated: true, completion: nil)
         label.text = "保存を押して写真を保存"
@@ -147,8 +145,8 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             
             // 即反映させる
             myDefault.synchronize()
-//            //閉じる処理
-//            imagePicker.dismiss(animated: true, completion: nil)
+//           //閉じる処理
+  //         imagePicker.dismiss(animated: true, completion: nil)
         }
         else{
             label.text = "保存に失敗しました"
@@ -168,17 +166,17 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     }
     // アルバムを表示
     @IBAction func showAlbum(_ sender : AnyObject) {
-        // UserDefaultからデータを取り出す
-        let strURL = myDefault.string(forKey: "selectedPhotoURL")
-        if strURL != nil{
-            let url = URL(string: strURL as String!)
-            let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
-            let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
-            let manager: PHImageManager = PHImageManager()
-            manager.requestImage(for: asset,targetSize: CGSize(width: 5, height: 500),contentMode: .aspectFill,options: nil) {(image, info) -> Void in
-                self.cameraView.image = image
-            }
-        }
+//        // UserDefaultからデータを取り出す
+//        let strURL = myDefault.string(forKey: "selectedPhotoURL")
+//        if strURL != nil{
+//            let url = URL(string: strURL as String!)
+//            let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
+//            let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
+//            let manager: PHImageManager = PHImageManager()
+//            manager.requestImage(for: asset,targetSize: CGSize(width: 5, height: 500),contentMode: .aspectFill,options: nil) {(image, info) -> Void in
+//                self.cameraView.image = image
+//            }
+//        }
 //        //カメラロールで写真を選んだ後
 //        func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 //            let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]! as AnyObject
@@ -208,7 +206,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     }
     //カメラロールから写真を選択する処理
     @IBAction func cameraRollBtn(_ sender: AnyObject) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {    //追記
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             //写真ライブラリ(カメラロール)表示用のViewControllerを宣言
             let controller = UIImagePickerController()
             controller.delegate = self
