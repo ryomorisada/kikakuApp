@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIGestureRecognizerDelegate {
     var photoAssets = [PHAsset]()
     var myDefault = UserDefaults.standard
     var cell = customCellCollectionViewCell()
@@ -51,8 +51,8 @@ class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectio
             let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
             let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
             cell.setConfigure(assets: asset)
-            
         }
+        
             
         //背景色の設定
         cell.backgroundColor = UIColor.black
@@ -60,6 +60,12 @@ class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectio
         return cell
     }
     
+    @IBAction func tapImage(_ sender: AnyObject) {
+        //segueを使わない画面遷移
+        let imageViewController = self.storyboard!.instantiateViewController(withIdentifier: "imageViewController") as! UIViewController
+        self.present(imageViewController, animated: true, completion: nil)
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

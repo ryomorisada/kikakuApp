@@ -184,7 +184,7 @@
         <!--Fifth View Controller-->
         <scene sceneID="l9Y-ks-c5l">
             <objects>
-                <viewController id="rhD-d9-edX" customClass="fifthViewController" customModule="kadai1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="fifthViewController" id="rhD-d9-edX" customClass="fifthViewController" customModule="kadai1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m2R-vp-h5j"/>
                         <viewControllerLayoutGuide type="bottom" id="17Z-sV-IaY"/>
@@ -215,7 +215,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="myImage" translatesAutoresizingMaskIntoConstraints="NO" id="4JN-nm-zSj"/>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="myImage" translatesAutoresizingMaskIntoConstraints="NO" id="4JN-nm-zSj">
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="BmP-Ja-pxQ" appends="YES" id="KyV-CT-4cH"/>
+                                                    </connections>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="myLabel" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="324-D9-DGx">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -257,8 +262,68 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFZ-mX-QNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BmP-Ja-pxQ">
+                    <connections>
+                        <action selector="tapImage:" destination="rhD-d9-edX" id="VbE-mD-MFg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1053.75" y="898.94366197183103"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="Af0-0a-w6o">
+            <objects>
+                <viewController storyboardIdentifier="imageViewController" id="bZz-ZE-kOE" customClass="imageViewController" customModule="kadai1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xwA-pN-xVQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="KX0-1p-N60"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hu2-FL-a8D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="feZ-bn-EHI">
+                                <frame key="frameInset" minX="37" minY="76" width="246" height="267"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gP-8M-cPu">
+                                <frame key="frameInset" minX="37" minY="369" width="246" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgT-fP-wVs">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Xet-wU-Kpe"/>
+                                    <constraint firstAttribute="width" constant="31" id="vJE-hP-u1l"/>
+                                </constraints>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="bZz-ZE-kOE" eventType="touchUpInside" id="312-8f-Wop"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KgT-fP-wVs" firstAttribute="leading" secondItem="Hu2-FL-a8D" secondAttribute="leading" constant="20" id="4ec-sr-Qp3"/>
+                            <constraint firstItem="feZ-bn-EHI" firstAttribute="leading" secondItem="Hu2-FL-a8D" secondAttribute="leading" constant="15" id="RXe-JI-SuR"/>
+                            <constraint firstItem="1gP-8M-cPu" firstAttribute="leading" secondItem="Hu2-FL-a8D" secondAttribute="leading" constant="15" id="SQ5-5t-xIp"/>
+                            <constraint firstItem="1gP-8M-cPu" firstAttribute="top" secondItem="feZ-bn-EHI" secondAttribute="bottom" constant="25" id="U5o-Mr-y5c"/>
+                            <constraint firstAttribute="trailing" secondItem="1gP-8M-cPu" secondAttribute="trailing" constant="15" id="Wbh-uL-MrG"/>
+                            <constraint firstItem="feZ-bn-EHI" firstAttribute="centerX" secondItem="Hu2-FL-a8D" secondAttribute="centerX" id="eXg-1g-fjX"/>
+                            <constraint firstAttribute="trailing" secondItem="feZ-bn-EHI" secondAttribute="trailing" constant="15" id="gag-uJ-gOB"/>
+                            <constraint firstItem="1gP-8M-cPu" firstAttribute="centerX" secondItem="Hu2-FL-a8D" secondAttribute="centerX" id="r2q-0e-6Qw"/>
+                            <constraint firstItem="feZ-bn-EHI" firstAttribute="top" secondItem="KgT-fP-wVs" secondAttribute="bottom" constant="25" id="sN8-kd-mzP"/>
+                            <constraint firstItem="KgT-fP-wVs" firstAttribute="top" secondItem="Hu2-FL-a8D" secondAttribute="top" constant="20" id="ydT-wj-1Pj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="feZ-bn-EHI" id="LlV-mA-A4W"/>
+                        <outlet property="label" destination="1gP-8M-cPu" id="DzV-kp-kMV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pi2-3k-52w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055.625" y="1644.7183098591549"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="O02-lE-uAn">
@@ -582,8 +647,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ctd-Zz-6ML"/>
-        <segue reference="1Ys-DL-zGY"/>
+        <segue reference="aYo-EI-vdP"/>
         <segue reference="d1A-eO-y7k"/>
+        <segue reference="W5h-Ww-Yfb"/>
     </inferredMetricsTieBreakers>
 </document>

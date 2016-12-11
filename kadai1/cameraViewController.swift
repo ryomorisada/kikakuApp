@@ -35,8 +35,8 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
         mytextView.text = ""
         mytextView.placeholder = "コメントを入力してください"
         //蓄積されたデータがあったら
-        //userDefault全削除
-        myDefault.removeObject(forKey: "comentList")
+//        //userDefault全削除
+//        myDefault.removeObject(forKey: "comentList")
         
         
         if (myDefault.object(forKey: "comentList") != nil){
@@ -112,23 +112,6 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
                 UIImageWriteToSavedPhotosAlbum(image, self, #selector(cameraViewController.image(_:didFinishSavingWithError:contextInfo:)), nil)
             } else {
             }
-            //カメラロールで写真を選んだ後
-            
-//            func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//                let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]! as AnyObject
-//                let strURL:String = assetURL.description
-//                print(strURL)
-//                // ユーザーデフォルトを用意する
-//                myDefault = UserDefaults.standard
-//                // データを書き込んで
-//                comentList.add(["coment":mytextView.text,"picture":strURL])
-//                myDefault.set(comentList, forKey: "coment")
-//                myDefault.set(strURL, forKey: "selectedPhotoURL")
-//                // 即反映させる
-//                myDefault.synchronize()
-//                //閉じる処理
-//                imagePicker.dismiss(animated: true, completion: nil)
-//            }
 
             //userDefaultに保存する処理
             myDefault = UserDefaults.standard
@@ -166,33 +149,6 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     }
     // アルバムを表示
     @IBAction func showAlbum(_ sender : AnyObject) {
-//        // UserDefaultからデータを取り出す
-//        let strURL = myDefault.string(forKey: "selectedPhotoURL")
-//        if strURL != nil{
-//            let url = URL(string: strURL as String!)
-//            let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
-//            let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
-//            let manager: PHImageManager = PHImageManager()
-//            manager.requestImage(for: asset,targetSize: CGSize(width: 5, height: 500),contentMode: .aspectFill,options: nil) {(image, info) -> Void in
-//                self.cameraView.image = image
-//            }
-//        }
-//        //カメラロールで写真を選んだ後
-//        func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//            let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]! as AnyObject
-//            let strURL:String = assetURL.description
-//            print(strURL)            
-//            // ユーザーデフォルトを用意する
-//            myDefault = UserDefaults.standard
-//            // データを書き込んで
-//            comentList.add(["coment":mytextView.text,"picture":strURL])
-//            myDefault.set(comentList, forKey: "coment")
-//            myDefault.set(strURL, forKey: "selectedPhotoURL")
-//            // 即反映させる
-//            myDefault.synchronize()
-//            //閉じる処理
-//            imagePicker.dismiss(animated: true, completion: nil)
-//        }
         //Returnキー押下時の呼び出しメソッド
         func textFieldShouldReturn(textField:UITextField) -> Bool {
             //キーボードをしまう
