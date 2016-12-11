@@ -10,7 +10,6 @@
         <!--必要診断アプリ-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="kadai1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -50,7 +49,7 @@
                                     <segue destination="f2A-S2-BKh" kind="show" id="BHc-PT-Xmz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必要診断アプリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qju-eo-FFO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Throw away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qju-eo-FFO">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -96,17 +95,25 @@
                                     <segue destination="rhD-d9-edX" kind="show" id="1Ys-DL-zGY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checker!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuL-Md-j1u">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EfO-lL-3V5" firstAttribute="top" secondItem="Yga-sQ-sRR" secondAttribute="bottom" constant="100" id="6Xr-CW-Vq1"/>
                             <constraint firstItem="qju-eo-FFO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-120" id="6tx-Z3-gYs"/>
                             <constraint firstItem="qju-eo-FFO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8iG-2W-p3q"/>
+                            <constraint firstItem="AuL-Md-j1u" firstAttribute="top" secondItem="qju-eo-FFO" secondAttribute="bottom" constant="1" id="9we-4T-Sas"/>
                             <constraint firstItem="wcx-Sn-8zx" firstAttribute="top" secondItem="Yga-sQ-sRR" secondAttribute="bottom" constant="100" id="HZ1-16-Byb"/>
                             <constraint firstItem="EfO-lL-3V5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I4m-ZX-ROU"/>
                             <constraint firstItem="EfO-lL-3V5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kdg-Aa-7cW"/>
                             <constraint firstItem="sna-Yp-lPd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="TbS-Px-4Eg"/>
                             <constraint firstItem="Yga-sQ-sRR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vgz-HA-hm5"/>
+                            <constraint firstItem="AuL-Md-j1u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="azS-p8-TDC"/>
                             <constraint firstItem="wcx-Sn-8zx" firstAttribute="leading" secondItem="EfO-lL-3V5" secondAttribute="trailing" constant="15" id="euZ-bd-1sy"/>
                             <constraint firstAttribute="trailing" secondItem="sna-Yp-lPd" secondAttribute="trailing" id="hO8-zP-ajE"/>
                             <constraint firstItem="Gst-iu-4Um" firstAttribute="top" secondItem="Yga-sQ-sRR" secondAttribute="bottom" constant="100" id="lTx-2o-rdX"/>
@@ -121,6 +128,7 @@
                         <outlet property="myImageView" destination="sna-Yp-lPd" id="JXy-6K-Uaz"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1055.625" y="123.59154929577466"/>
         </scene>
@@ -207,7 +215,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="myImage" translatesAutoresizingMaskIntoConstraints="NO" id="4JN-nm-zSj"/>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="myImage" translatesAutoresizingMaskIntoConstraints="NO" id="4JN-nm-zSj"/>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="myLabel" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="324-D9-DGx">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>

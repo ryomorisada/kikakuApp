@@ -36,20 +36,22 @@ class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectio
        //セルの中身を設定
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        //cellオブジェクトを作成
-        let cell:UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UICollectionViewCell
+        let cell:customCellCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! customCellCollectionViewCell
 
        //端末のアルバムの中身を表示する処理
-       //型が違うからnilが出てしまっている取り出し方を変更する
+       //UserDefaultで番地指定しているので参照できるように読み込みが必要??
         let dicTmp:NSDictionary = comentList[indexPath.row] as! NSDictionary
-        let strURL = dicTmp["picture"]
+        print(dicTmp)
+            
+        let strURL = dicTmp["picture"]!
+        print(strURL)
+            
         if strURL != nil{
-            let url = URL(string: strURL as! String!)
+            let url = URL(string: strURL as! String)
             let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
             let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
-            let manager: PHImageManager = PHImageManager()
-            manager.requestImage(for: asset,targetSize: CGSize(width: 5, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
-                self.cell.myImage.image = image
-            }
+            cell.setConfigure(assets: asset)
+            
         }
             
         //背景色の設定
@@ -57,6 +59,8 @@ class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectio
         //設定したcellを返す
         return cell
     }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
