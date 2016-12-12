@@ -19,32 +19,32 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     @IBOutlet weak var bAlbum: UIButton!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var mytextView: UITextField!
-    var comentList = NSMutableArray()
+    var commentList = NSMutableArray()
     var image:UIImage! = nil
-    var comentArray:[NSDictionary] = []
-    var comentDic:NSDictionary! = [:]
+    var commentArray:[NSDictionary] = []
+    var commentDic:NSDictionary! = [:]
     var myDefault = UserDefaults.standard
     var selectedUrl = ""
     var localID = ""
-    var comentListText:String = ""
+    var commentListText:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = "Startを押してカメラを起動してください"
-//        comentList[Dictionary] = nil
+//        commentList[Dictionary] = nil
         mytextView.text = ""
         mytextView.placeholder = "コメントを入力してください"
         //蓄積されたデータがあったら
 //        //userDefault全削除
-//        myDefault.removeObject(forKey: "comentList")
+//        myDefault.removeObject(forKey: "commentList")
         
         
-        if (myDefault.object(forKey: "comentList") != nil){
+        if (myDefault.object(forKey: "commentList") != nil){
         //データを取り出して、diaryListを更新(ダウンキャストで型変換)
-        var comentListTmp: NSMutableArray  = myDefault.object(forKey: "comentList") as! NSMutableArray
-            comentList = comentListTmp.mutableCopy() as! NSMutableArray
+        var commentListTmp: NSMutableArray  = myDefault.object(forKey: "commentList") as! NSMutableArray
+            commentList = commentListTmp.mutableCopy() as! NSMutableArray
         }
-        print(comentList)
+        print(commentList)
     }
     // カメラの撮影開始
     @IBAction func bCameraStart(_ sender : AnyObject) {
@@ -116,15 +116,15 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             //userDefaultに保存する処理
             myDefault = UserDefaults.standard
 //            //userDefault全削除
-//            myDefault.removeObject(forKey: "comentList")
+//            myDefault.removeObject(forKey: "commentList")
             
             //
-            comentListText = mytextView.text! as String
+            commentListText = mytextView.text! as String
             
             // データを書き込んで
-            comentList.add(["coment":comentListText,"picture":selectedUrl])
-            print(comentList)
-            myDefault.set(comentList, forKey: "comentList")
+            commentList.add(["comment":commentListText,"picture":selectedUrl])
+            print(commentList)
+            myDefault.set(commentList, forKey: "commentList")
             
             // 即反映させる
             myDefault.synchronize()
@@ -154,7 +154,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             //キーボードをしまう
             self.view.endEditing(true)
             //ラベルの文字列を保存する。
-            myDefault.set(mytextView.text, forKey:"coment")
+            myDefault.set(mytextView.text, forKey:"comment")
             //plistファイルへの出力と同期する。
             myDefault.synchronize()
             return false
@@ -178,11 +178,11 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "goAlubum"){
             let fifthVC = (segue.destination as? fifthViewController)!
-            let tmpDic = myDefault.dictionary(forKey: "coment")
-            comentList.add(tmpDic)
-            fifthVC.comentList = comentList
+            let tmpDic = myDefault.dictionary(forKey: "comment")
+            commentList.add(tmpDic)
+            fifthVC.commentList = commentList
         }
-        print(comentList)
+        print(commentList)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
