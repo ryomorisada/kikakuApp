@@ -13,6 +13,8 @@ class imageViewController: UIViewController {
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
     var selectedUrl:String!
     var selectedComment:String!
     
@@ -34,10 +36,13 @@ class imageViewController: UIViewController {
                                         return
                                     }
                                     self?.image.image = image
-                })            
+                })
         }
         label.text = selectedComment as! String
         print(selectedComment)
+        backgroundImage.image = UIImage(named:"room03.jpg")
+        label.backgroundColor = UIColor.white
+        backgroundImage.alpha = 0.3
 
         super.viewDidLoad()
 
@@ -45,8 +50,8 @@ class imageViewController: UIViewController {
     }
     
     @IBAction func backBtn(_ sender: AnyObject) {
-        let fifthViewController = self.storyboard!.instantiateViewController(withIdentifier: "fifthViewController")
-        self.present(fifthViewController, animated: true, completion: nil)
+//        let fifthViewController = self.storyboard!.instantiateViewController(withIdentifier: "fifthViewController")
+//        self.navigationController?.pushViewController(fifthViewController, animated: true)
     }
     //tapされたイメージを表示
     //userDefaultから？前の画面のイメージから？

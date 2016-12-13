@@ -16,17 +16,23 @@ class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectio
     var commentList: NSMutableArray = []
     var selectedUrl:String!
     var selectedComment:String!
-    
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        collectionView.isHidden = true
+        collectionView.backgroundColor = UIColor.clear
         //userDefaultの内容の取り出しの処理
         //蓄積されたデータがあったら
         if (myDefault.object(forKey: "commentList") != nil) {
         //データを取り出して、diaryListを更新(ダウンキャストで型変換)
-        var commentListTmp: NSMutableArray  = myDefault.object(forKey: "commentList") as! NSMutableArray
+        var commentListTmp: NSArray  = myDefault.object(forKey: "commentList") as! NSArray
         commentList = commentListTmp.mutableCopy() as! NSMutableArray
         }
+        backgroundImage.image = UIImage(named:"room2.jpg")
+        backgroundImage.alpha = 0.3
+        
     }
         //セクション数を決める
         func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -61,6 +67,7 @@ class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectio
         return cell
     }
     
+    @IBAction func returenMenu(segue:UIStoryboardSegue){}
 //    @IBAction func tapImage(_ sender: AnyObject) {
 //        //画面遷移
 ////        let imageViewController = self.storyboard!.instantiateViewController(withIdentifier: "imageViewController") as! UIViewController

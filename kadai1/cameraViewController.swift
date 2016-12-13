@@ -11,7 +11,7 @@ import Photos
 import MobileCoreServices
 import AVFoundation
 
-class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
 
     @IBOutlet weak var cameraView: UIImageView!
     @IBOutlet weak var bCameraStart: UIButton!
@@ -34,6 +34,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
 //        commentList[Dictionary] = nil
         mytextView.text = ""
         mytextView.placeholder = "コメントを入力してください"
+        mytextView.delegate = self
         //蓄積されたデータがあったら
 //        //userDefault全削除
 //        myDefault.removeObject(forKey: "commentList")
@@ -41,7 +42,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
         
         if (myDefault.object(forKey: "commentList") != nil){
         //データを取り出して、diaryListを更新(ダウンキャストで型変換)
-        var commentListTmp: NSMutableArray  = myDefault.object(forKey: "commentList") as! NSMutableArray
+        var commentListTmp: NSArray  = myDefault.object(forKey: "commentList") as! NSArray
             commentList = commentListTmp.mutableCopy() as! NSMutableArray
         }
         print(commentList)
@@ -135,6 +136,14 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             label.text = "保存に失敗しました"
         }        
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        label.text = textField.text
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
+    }
+    
     // 書き込み完了結果の受け取り
     func image(_ image: UIImage, didFinishSavingWithError error: NSError!, contextInfo: UnsafeMutableRawPointer) {
         print("1")

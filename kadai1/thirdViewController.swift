@@ -188,8 +188,9 @@ class thirdViewController: UIViewController {
         myAp.answerDistination2 = answerDistination2 as! Int
         //segueを使わない画面遷移
         let targetViewController = self.storyboard!.instantiateViewController(withIdentifier: "fourthViewController") as! UIViewController
-        self.present( targetViewController,animated: true,completion: nil)
+        self.navigationController?.pushViewController(targetViewController, animated: true)
         }
+        //navigationController?.pushViewController
         //for文を流す
         for dat in jsonArray {
             //json.txtファイルを読み込んで
