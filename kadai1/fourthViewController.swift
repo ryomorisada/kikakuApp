@@ -11,8 +11,9 @@ import UIKit
 class fourthViewController: UIViewController {
 
     @IBOutlet weak var myImageView: UIImageView!
-    @IBOutlet weak var checkResultLabel: UITextField!
-    @IBOutlet weak var resultLabel: UITextField!
+    
+    @IBOutlet weak var checkResultLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
     var myAp = UIApplication.shared.delegate as! AppDelegate
     //answerDistinationのメンバ変数定義
     var answerDistination1: Int! = 0
@@ -39,8 +40,13 @@ class fourthViewController: UIViewController {
         }
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        checkResultLabel.adjustsFontSizeToFitWidth = true
+        resultLabel.adjustsFontSizeToFitWidth = true
     }
     @IBAction func backMenuBtn(_ sender: UIButton) {
+        //画面遷移（最初の画面に戻る）
+        self.navigationController?.popToRootViewController(animated: true)
+
     }
     
     @IBAction func cameraBtn(_ sender: UIButton) {

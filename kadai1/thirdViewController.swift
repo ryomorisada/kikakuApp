@@ -9,7 +9,7 @@
 import UIKit
 
 class thirdViewController: UIViewController {
-    @IBOutlet weak var questionLable: UITextField!
+    @IBOutlet weak var questionLable: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var option1Btn: UIButton!
     @IBOutlet weak var option2Btn: UIButton!
@@ -134,9 +134,10 @@ class thirdViewController: UIViewController {
         myAp.answerDistination1 = answerDistination1 as! Int
         myAp.answerDistination2 = 0
         //segueを使わない画面遷移
-        let next: UIViewController = storyboard!.instantiateViewController(withIdentifier: "fourthViewController") as! UIViewController
-        present(next, animated: true, completion: nil)
-            }
+            //segueを使わない画面遷移
+            let targetViewController = self.storyboard!.instantiateViewController(withIdentifier: "fourthViewController") as! UIViewController
+            self.navigationController?.pushViewController(targetViewController, animated: true)
+        }
 
         //for文を流す
         for dat in jsonArray {
