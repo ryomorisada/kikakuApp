@@ -30,6 +30,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cameraView.image = UIImage(named:"noImage.jpg")
         label.text = "Startを押してカメラを起動してください"
 //        commentList[Dictionary] = nil
         mytextView.text = ""
