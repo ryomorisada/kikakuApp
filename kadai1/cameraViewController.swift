@@ -63,6 +63,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             label.text = "エラー"
         }
     }
+    
     //　撮影が完了時した時に呼ばれる
     func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -108,19 +109,8 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     }
     // 写真を保存
     @IBAction func savePic(_ sender : AnyObject) {
-        let image:UIImage! = cameraView.image
-        if image != nil {
-            if #available(iOS 9.3, *) {
-                UIImageWriteToSavedPhotosAlbum(image, self, #selector(cameraViewController.image(_:didFinishSavingWithError:contextInfo:)), nil)
-            } else {
-            }
-
             //userDefaultに保存する処理
             myDefault = UserDefaults.standard
-//            //userDefault全削除
-//            myDefault.removeObject(forKey: "commentList")
-            
-            //
             commentListText = mytextView.text! as String
             
             // データを書き込んで
@@ -130,12 +120,6 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
             
             // 即反映させる
             myDefault.synchronize()
-//           //閉じる処理
-  //         imagePicker.dismiss(animated: true, completion: nil)
-        }
-        else{
-            label.text = "保存に失敗しました"
-        }        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
@@ -145,18 +129,6 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
         return true
     }
     
-    // 書き込み完了結果の受け取り
-    func image(_ image: UIImage, didFinishSavingWithError error: NSError!, contextInfo: UnsafeMutableRawPointer) {
-        print("1")
-        
-        if error != nil {
-            print(error.code)
-            label.text = "保存に失敗しました"
-        }
-        else{
-            label.text = "保存に成功しました"
-        }
-    }
     // アルバムを表示
     @IBAction func showAlbum(_ sender : AnyObject) {
         //Returnキー押下時の呼び出しメソッド

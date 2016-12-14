@@ -51,14 +51,18 @@ class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectio
         let dicTmp:NSDictionary = commentList[indexPath.row] as! NSDictionary
         print(dicTmp)
         
-        let strURL = dicTmp["picture"]!
-        print(strURL)
+        let strURL = dicTmp["picture"]! as! String
+            print(strURL)
             
-        if strURL != nil{
-            let url = URL(string: strURL as! String)
+        if strURL != "" {
+            let url = URL(string: strURL)
             let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
-            let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
-            cell.setConfigure(assets: asset)
+            if fetchResult.firstObject == nil{
+                cell.myImage.image = UIImage(named:"noImage.jpg")
+            } else{
+                let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
+                cell.setConfigure(assets: asset)
+            }
         }
         
         //背景色の設定

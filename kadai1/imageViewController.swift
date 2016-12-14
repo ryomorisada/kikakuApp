@@ -21,23 +21,38 @@ class imageViewController: UIViewController {
     override func viewDidLoad() {
         //tapされたイメージとコメントを表示
         //userDefaultから？前の画面のイメージから？
-        if selectedUrl != nil{
+        if selectedUrl != ""{
             let url = URL(string: selectedUrl)
             let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
-            let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
-//            cell.setConfigure(assets: asset)
-            let manager = PHImageManager()
-            manager.requestImage(for: asset,
-                                 targetSize: image.frame.size,
-                                 contentMode: .aspectFill,
-                                 options: nil,
-                                 resultHandler: { [weak self] (image, info) in
-                                    guard let wself = self, let outImage = image else {
-                                        return
-                                    }
-                                    self?.image.image = image
-                })
-        }
+            if fetchResult.firstObject == nil{
+                image.image = UIImage(named:"noImage.jpg")
+            } else{
+                let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
+//                setConfigure(assets: asset)
+                let manager = PHImageManager()
+                    manager.requestImage(for: asset,targetSize: image.frame.size,contentMode: .aspectFill,options: nil) {(image,info) -> Void in self.image.image = image
+                }
+//            else {
+//                    image.image = UIImage(named:"noImage.jpg")
+//                }
+            }
+        } else {
+                image.image = UIImage(named:"noImage.jpg")
+            }
+
+//                       cell.setConfigure(assets: asset)
+//            let manager = PHImageManager()
+//            manager.requestImage(for: asset,
+//                                 targetSize: image.frame.size,
+//                                 contentMode: .aspectFill,
+//                                 options: nil,
+//                                 resultHandler: { [weak self] (image, info) in
+//                                    guard let wself = self, let outImage = image else {
+//                                        return
+//                                    }
+//                                    self?.image.image = image
+//                })
+        
         label.text = selectedComment as! String
         print(selectedComment)
         backgroundImage.image = UIImage(named:"room03.jpg")
