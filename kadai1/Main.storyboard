@@ -284,7 +284,7 @@
                                 <state key="normal" title="戻る"/>
                                 <connections>
                                     <action selector="backBtn:" destination="bZz-ZE-kOE" eventType="touchUpInside" id="OEG-5g-9vW"/>
-                                    <segue destination="rhD-d9-edX" kind="presentation" id="FYV-o8-Cdx"/>
+                                    <segue destination="RpP-mb-w6E" kind="unwind" unwindAction="returenMenuWithSegue:" id="Ihf-xV-EL8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxW-lA-Ywq">
@@ -325,6 +325,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pi2-3k-52w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RpP-mb-w6E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1055.625" y="1644.7183098591549"/>
         </scene>
@@ -637,8 +638,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aYo-EI-vdP"/>
+        <segue reference="W5h-Ww-Yfb"/>
         <segue reference="AUV-h0-tC4"/>
-        <segue reference="FYV-o8-Cdx"/>
+        <segue reference="aYo-EI-vdP"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -23,9 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var arr:NSArray = []
     var dic1:NSDictionary = ["":""]
     var dicTmp: NSDictionary = ["":""]
-    
     //UserDefaultsに関する処理
     var myUserDafault:UserDefaults = UserDefaults()
+    //
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

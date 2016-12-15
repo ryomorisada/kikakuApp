@@ -12,7 +12,7 @@ import MobileCoreServices
 import AVFoundation
 
 class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
-
+    
     @IBOutlet weak var cameraView: UIImageView!
     @IBOutlet weak var bCameraStart: UIButton!
     @IBOutlet weak var bSavePic: UIButton!
@@ -31,19 +31,19 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraView.image = UIImage(named:"noImage.jpg")
-        label.text = "Startを押してカメラを起動してください"
-//        commentList[Dictionary] = nil
+        label.text = "カメラを押してカメラを起動してください"
+        //        commentList[Dictionary] = nil
         mytextView.text = ""
         mytextView.placeholder = "コメントを入力してください"
         mytextView.delegate = self
         //蓄積されたデータがあったら
-//        //userDefault全削除
-//        myDefault.removeObject(forKey: "commentList")
+        //        //userDefault全削除
+        //        myDefault.removeObject(forKey: "commentList")
         
         
         if (myDefault.object(forKey: "commentList") != nil){
-        //データを取り出して、diaryListを更新(ダウンキャストで型変換)
-        var commentListTmp: NSArray  = myDefault.object(forKey: "commentList") as! NSArray
+            //データを取り出して、diaryListを更新(ダウンキャストで型変換)
+            var commentListTmp: NSArray  = myDefault.object(forKey: "commentList") as! NSArray
             commentList = commentListTmp.mutableCopy() as! NSMutableArray
         }
         print(commentList)
@@ -66,10 +66,28 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     
     //　撮影が完了時した時に呼ばれる
     func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if (info[UIImagePickerControllerReferenceURL] != nil){
+            
+            //カメラロールから写真を選択
+            print("カメラロールから選択")
+            //アセットURL 保存
+            let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]! as AnyObject
+            self.selectedUrl = assetURL.description
+            //画像を画面表示
+            let url = URL(string: self.selectedUrl as String!)
+            let fetchResult: PHFetchResult = PHAsset.fetchAssets(withALAssetURLs: [url!], options: nil)
+            let asset: PHAsset = (fetchResult.firstObject! as PHAsset)
+            let manager: PHImageManager = PHImageManager()
+            manager.requestImage(for: asset,targetSize: CGSize(width: 5, height: 500),contentMode: .aspectFill,options: nil) { (image, info) -> Void in
+                self.cameraView.image = image
+            }
+            //閉じる処理
+            imagePicker.dismiss(animated: true, completion: nil)
+            label.text = "保存を押して写真を保存"
+            return
+        }
+        
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            //            cameraView.contentMode = .scaleAspectFit
-            //            cameraView.image = pickedImage
-            // When taking a picture with the camera, store it in the user roll
             PHPhotoLibrary.shared().performChanges(
                 { () -> Void in
                     // save the image
@@ -100,7 +118,7 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
         //閉じる処理
         imagePicker.dismiss(animated: true, completion: nil)
         label.text = "保存を押して写真を保存"
-        }
+    }
     
     // 撮影がキャンセルされた時に呼ばれる
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -109,17 +127,17 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
     }
     // 写真を保存
     @IBAction func savePic(_ sender : AnyObject) {
-            //userDefaultに保存する処理
-            myDefault = UserDefaults.standard
-            commentListText = mytextView.text! as String
-            
-            // データを書き込んで
-            commentList.add(["comment":commentListText,"picture":selectedUrl])
-            print(commentList)
-            myDefault.set(commentList, forKey: "commentList")
-            
-            // 即反映させる
-            myDefault.synchronize()
+        //userDefaultに保存する処理
+        myDefault = UserDefaults.standard
+        commentListText = mytextView.text! as String
+        // データを書き込んで
+        commentList.add(["comment":commentListText,"picture":selectedUrl])
+        print(commentList)
+        myDefault.set(commentList, forKey: "commentList")
+        // 即反映させる
+        myDefault.synchronize()
+        label.text = "保存しました"
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
@@ -171,15 +189,15 @@ class cameraViewController: UIViewController,UIImagePickerControllerDelegate, UI
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

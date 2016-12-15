@@ -71,7 +71,19 @@ class fifthViewController: UIViewController,UICollectionViewDelegate,UICollectio
         return cell
     }
     
-    @IBAction func returenMenu(segue:UIStoryboardSegue){}
+    
+    @IBAction func returenMenu(segue:UIStoryboardSegue){
+        
+        if (myDefault.object(forKey: "commentList") != nil) {
+            //データを取り出して、diaryListを更新(ダウンキャストで型変換)
+            var commentListTmp: NSArray  = myDefault.object(forKey: "commentList") as! NSArray
+            commentList = commentListTmp.mutableCopy() as! NSMutableArray
+        }
+    //再読み込みの処理
+    collectionView.reloadData()
+    
+    
+    }
 //    @IBAction func tapImage(_ sender: AnyObject) {
 //        //画面遷移
 ////        let imageViewController = self.storyboard!.instantiateViewController(withIdentifier: "imageViewController") as! UIViewController

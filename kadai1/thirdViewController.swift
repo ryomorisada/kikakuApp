@@ -186,7 +186,7 @@ class thirdViewController: UIViewController {
         if answerDistination2 < 0 {
         //グローバル変数にanswerDistinationの値を代入する
         myAp.answerDistination1 = 0
-        myAp.answerDistination2 = answerDistination2 as! Int
+        myAp.answerDistination2 = answerDistination2 
         //segueを使わない画面遷移
         let targetViewController = self.storyboard!.instantiateViewController(withIdentifier: "fourthViewController") as! UIViewController
         self.navigationController?.pushViewController(targetViewController, animated: true)

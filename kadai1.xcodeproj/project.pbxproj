@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		460791931DE0099900350F7F /* fourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460791921DE0099900350F7F /* fourthViewController.swift */; };
 		461866BE1DFD7D6200DE3308 /* imageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461866BD1DFD7D6200DE3308 /* imageViewController.swift */; };
+		46266ECA1E024A00002F12DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46266EC91E024A00002F12DA /* Main.storyboard */; };
 		4626FD4F1DFFADE40027BEB4 /* room2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4626FD4E1DFFADE40027BEB4 /* room2.jpg */; };
 		4626FD511DFFB0A70027BEB4 /* room03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4626FD501DFFB0A70027BEB4 /* room03.jpg */; };
 		4626FD531E00FE090027BEB4 /* noImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4626FD521E00FE090027BEB4 /* noImage.jpg */; };
 		462875CB1DF2F956006B6B88 /* customCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462875CA1DF2F956006B6B88 /* customCellCollectionViewCell.swift */; };
-		46408B131DEDB6C1007EF99F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46408B121DEDB6C1007EF99F /* Main.storyboard */; };
 		464BC3B71DE1BCF6005AE905 /* fifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */; };
 		464BE3861DDB2F11008226A1 /* thirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BE3851DDB2F11008226A1 /* thirdViewController.swift */; };
 		4660E5551DEDAC0B00766D17 /* cameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660E5541DEDAC0B00766D17 /* cameraViewController.swift */; };
@@ -49,11 +49,11 @@
 /* Begin PBXFileReference section */
 		460791921DE0099900350F7F /* fourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fourthViewController.swift; sourceTree = "<group>"; };
 		461866BD1DFD7D6200DE3308 /* imageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageViewController.swift; sourceTree = "<group>"; };
+		46266EC91E024A00002F12DA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4626FD4E1DFFADE40027BEB4 /* room2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = room2.jpg; sourceTree = "<group>"; };
 		4626FD501DFFB0A70027BEB4 /* room03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = room03.jpg; sourceTree = "<group>"; };
 		4626FD521E00FE090027BEB4 /* noImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noImage.jpg; sourceTree = "<group>"; };
 		462875CA1DF2F956006B6B88 /* customCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCellCollectionViewCell.swift; sourceTree = "<group>"; };
-		46408B121DEDB6C1007EF99F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		464BC3B61DE1BCF6005AE905 /* fifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fifthViewController.swift; sourceTree = "<group>"; };
 		464BE3851DDB2F11008226A1 /* thirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = thirdViewController.swift; sourceTree = "<group>"; };
 		4660E5541DEDAC0B00766D17 /* cameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameraViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +123,7 @@
 		469839D11DCCC0710042A9F5 /* kadai1 */ = {
 			isa = PBXGroup;
 			children = (
+				46266EC91E024A00002F12DA /* Main.storyboard */,
 				469839D21DCCC0710042A9F5 /* AppDelegate.swift */,
 				469839D41DCCC0710042A9F5 /* ViewController.swift */,
 				469895BD1DDAAF4F0061B130 /* secondViewController.swift */,
@@ -132,14 +133,13 @@
 				461866BD1DFD7D6200DE3308 /* imageViewController.swift */,
 				4660E5541DEDAC0B00766D17 /* cameraViewController.swift */,
 				462875CA1DF2F956006B6B88 /* customCellCollectionViewCell.swift */,
-				46408B121DEDB6C1007EF99F /* Main.storyboard */,
+				469839DB1DCCC0710042A9F5 /* LaunchScreen.storyboard */,
 				46BD32971DEAB289005EBC3A /* room01.jpg */,
 				4626FD4E1DFFADE40027BEB4 /* room2.jpg */,
 				46BD32991DEABB25005EBC3A /* 02.jpg */,
 				4626FD501DFFB0A70027BEB4 /* room03.jpg */,
 				4626FD521E00FE090027BEB4 /* noImage.jpg */,
 				469839D91DCCC0710042A9F5 /* Assets.xcassets */,
-				469839DB1DCCC0710042A9F5 /* LaunchScreen.storyboard */,
 				469839DE1DCCC0710042A9F5 /* Info.plist */,
 				46FBF5671DDDFBB100BBCD9A /* json.txt */,
 			);
@@ -278,7 +278,7 @@
 				46BD329A1DEABB25005EBC3A /* 02.jpg in Resources */,
 				46FBF5681DDDFBB100BBCD9A /* json.txt in Resources */,
 				4626FD531E00FE090027BEB4 /* noImage.jpg in Resources */,
-				46408B131DEDB6C1007EF99F /* Main.storyboard in Resources */,
+				46266ECA1E024A00002F12DA /* Main.storyboard in Resources */,
 				469839DD1DCCC0710042A9F5 /* LaunchScreen.storyboard in Resources */,
 				469839DA1DCCC0710042A9F5 /* Assets.xcassets in Resources */,
 			);

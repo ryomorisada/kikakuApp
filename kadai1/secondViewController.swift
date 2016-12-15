@@ -17,7 +17,7 @@ class secondViewController: UIViewController,UITableViewDataSource,UITableViewDe
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
         //Appにアクセス
-        var myAp = UIApplication.shared.delegate as! AppDelegate
+        let myAp = UIApplication.shared.delegate as! AppDelegate
         //メンバ変数にグローバル変数から代入
         myGanre = myAp.myGanre as NSArray
         super.viewDidLoad()

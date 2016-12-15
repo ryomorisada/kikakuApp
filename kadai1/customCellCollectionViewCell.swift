@@ -27,12 +27,8 @@ class customCellCollectionViewCell: UICollectionViewCell {
     func setConfigure(assets: PHAsset) {
         let manager = PHImageManager()
         
-        manager.requestImage(for: assets,
-                             targetSize: frame.size,
-                             contentMode: .aspectFill,
-                             options: nil,
-                             resultHandler: { [weak self] (image, info) in
-                                guard let wself = self, let outImage = image else {
+        manager.requestImage(for: assets,targetSize: frame.size,contentMode: .aspectFill,options: nil,resultHandler: { [weak self] (image, info) in
+    guard let wself = self, let outImage = image else {
                                     return
                                 }
                                 self?.myImage.image = image
