@@ -283,7 +283,19 @@
                                 </constraints>
                                 <state key="normal" title="戻る"/>
                                 <connections>
-                                    <segue destination="GvH-4v-FdH" kind="unwind" unwindAction="returenMenuWithSegue:" id="VRg-Ga-da0"/>
+                                    <action selector="backBtn:" destination="bZz-ZE-kOE" eventType="touchUpInside" id="OEG-5g-9vW"/>
+                                    <segue destination="rhD-d9-edX" kind="presentation" id="FYV-o8-Cdx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxW-lA-Ywq">
+                                <frame key="frameInset" minX="266" minY="20" width="31" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="9LO-dS-JoG"/>
+                                    <constraint firstAttribute="height" constant="30" id="oTM-2z-3Ct"/>
+                                </constraints>
+                                <state key="normal" title="削除"/>
+                                <connections>
+                                    <action selector="deleteBtn:" destination="bZz-ZE-kOE" eventType="touchUpInside" id="pjT-sR-5rY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -297,8 +309,10 @@
                             <constraint firstItem="KX0-1p-N60" firstAttribute="top" secondItem="O89-rY-lew" secondAttribute="bottom" id="Quo-EU-CQZ"/>
                             <constraint firstItem="O89-rY-lew" firstAttribute="top" secondItem="Hu2-FL-a8D" secondAttribute="top" id="Zej-24-tgR"/>
                             <constraint firstItem="1gP-8M-cPu" firstAttribute="top" secondItem="feZ-bn-EHI" secondAttribute="bottom" constant="40" id="cqT-Zz-YlV"/>
+                            <constraint firstItem="xxW-lA-Ywq" firstAttribute="top" secondItem="Hu2-FL-a8D" secondAttribute="top" constant="20" id="fln-ql-D4x"/>
                             <constraint firstItem="feZ-bn-EHI" firstAttribute="centerX" secondItem="Hu2-FL-a8D" secondAttribute="centerX" id="r97-Ys-vbZ"/>
                             <constraint firstItem="O89-rY-lew" firstAttribute="leading" secondItem="Hu2-FL-a8D" secondAttribute="leading" id="tY7-tC-Yjq"/>
+                            <constraint firstAttribute="trailing" secondItem="xxW-lA-Ywq" secondAttribute="trailing" constant="20" id="vip-HN-gLT"/>
                             <constraint firstItem="KgT-fP-wVs" firstAttribute="top" secondItem="Hu2-FL-a8D" secondAttribute="top" constant="20" id="ydT-wj-1Pj"/>
                             <constraint firstAttribute="trailing" secondItem="O89-rY-lew" secondAttribute="trailing" id="zEU-om-OVd"/>
                             <constraint firstItem="feZ-bn-EHI" firstAttribute="top" secondItem="KgT-fP-wVs" secondAttribute="bottom" constant="20" id="zyV-5j-vVG"/>
@@ -311,7 +325,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pi2-3k-52w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="GvH-4v-FdH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1055.625" y="1644.7183098591549"/>
         </scene>
@@ -624,8 +637,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="W5h-Ww-Yfb"/>
-        <segue reference="AUV-h0-tC4"/>
         <segue reference="aYo-EI-vdP"/>
+        <segue reference="AUV-h0-tC4"/>
+        <segue reference="FYV-o8-Cdx"/>
     </inferredMetricsTieBreakers>
 </document>
